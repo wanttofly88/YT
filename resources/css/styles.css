@@ -125,14 +125,11 @@ span.show640.show1000 {
 }
 
 header {
-	position: fixed;
-	width: 250px;
-	height: 100%;
-	left: 0;
-	top: 0;
+	position: relative;
+	width: 100%;
+	height: 100px;
 	background: #ffffff;
 	color: #0c0c0c;
-	text-align: center;
 	box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.2);
 	z-index: 100;
 }
@@ -142,9 +139,9 @@ header .logo {
 	height: 100px;
 	background: url(../images/logo.svg);
 	background-size: 100%;
-	margin: 45px auto 42px;
 }
 header nav {
+	display: none;
 	text-align: center;
 	margin-bottom: 90px;
 }
@@ -157,7 +154,10 @@ header nav a {
 	font-weight: 300;
 }
 header .basket {
-	margin-bottom: 50px;
+	position: absolute;
+	right: 5%;
+	margin-right: 190px;
+	top: 42px;
 }
 header .basket a {
 	color: #0c0c0c;
@@ -166,7 +166,9 @@ header .basket a {
 	letter-spacing: 0.05em;
 }
 header .phone {
-	margin-bottom: 10px;
+	position: absolute;
+	right: 5%;
+	top: 40px;
 }
 header .phone a {
 	color: #0c0c0c;
@@ -174,14 +176,50 @@ header .phone a {
 	font-weight: 600;
 }
 header .callback {
+	display: none;
 	font-size: 12px;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
 }
+@media screen and (min-width: 1000px) {
+	header {
+		position: fixed;
+		width: 250px;
+		height: 100%;
+		left: 0;
+		top: 0;
+		text-align: center;
+	}
+	header .logo {
+		margin: 45px auto 42px;
+	}
+	header nav {
+		display: block;
+	}
+	header .basket {
+		right: 0;
+		margin-right: 0px;
+		position: static;
+		margin-bottom: 50px;
+	}
+	header .phone {
+		position: static;
+		margin-bottom: 10px;
+	}
+	header .callback {
+		display: block;
+	}
+}
 
 main,
 footer {
-	margin-left: 250px;
+	margin-left: 0px;
+}
+@media screen and (min-width: 1000px) {
+	main,
+	footer {
+		margin-left: 250px;
+	}
 }
 main {
 	position: relative;
@@ -191,7 +229,10 @@ main .lines-bg {
 	width: 100%;
 	height: 100%;
 	left: 0;
+	right: 0;
 	top: 0;
+	max-width: 1090px;
+	margin: 0 auto;
 }
 main .lines-bg .l {
 	position: absolute;
@@ -215,9 +256,14 @@ main section {
 }
 .wrapper {
 	position: relative;
-	width: 92%;
+	width: 90%;
 	margin: 0 auto;
 	max-width: 1000px;
+}
+@media screen and (min-width: 1000px) {
+	.wrapper {
+		width: 92%;
+	}
 }
 h2 {
 	font-family: 'Roboto Slab', serif;
@@ -236,6 +282,7 @@ h6 {
 p {
 	line-height: 1.5;
 	margin-right: 10%;
+	margin-bottom: 10px;
 }
 p a {
 	color: #fdb813;
@@ -337,7 +384,7 @@ p a {
 	clear: both;
 }
 .home {
-	margin-bottom: 100px;
+	margin-bottom: 60px;
 	background: #ffffff
 }
 section h2 {
@@ -350,12 +397,15 @@ section h2 {
 }
 .home .slider-outer {
 	position: relative;
-	height: 510px;
+	min-height: 445px;
 }
 .home .slider {
 	position: relative;
 	width: 100%;
 	height: 100%;
+}
+.home .slider .slide {
+	min-height: 445px;
 }
 .home .slider .img {
 	position: absolute;
@@ -367,12 +417,23 @@ section h2 {
 	background-position: center;
 }
 .home .slider .wrapper {
-	height: 510px;
+	height: 100%;
+}
+@media screen and (min-width: 1000px) {
+	.home {
+		margin-bottom: 100px;
+	}
+	.home .slider-outer {
+		min-height: 510px;
+	}
+	.home .slider .slide {
+		min-height: 510px;
+	}
 }
 .home .slider-arrows {
 	position: absolute;
 	left: 62.5%;
-	bottom: 0;
+	bottom: 5px;
 	width: 120px;
 	height: 60px;
 	background: #ffffff;
@@ -422,9 +483,9 @@ section h2 {
 }
 
 .home .text {
-	padding-top: 110px;
-	margin-left: 4.25%;
-	width: 52%;
+	padding-top: 80px;
+	padding-bottom: 50px;
+	width: 60%;
 }
 .home .nfo {
 	color: #0c0c0c;
@@ -435,7 +496,7 @@ section h2 {
 }
 .home .slider-counter {
 	position: absolute;
-	bottom: 20px;
+	bottom: 25px;
 	left: 62.5%;
 	margin-left: 138px;
 	z-index: 2;
@@ -451,6 +512,13 @@ section h2 {
 }
 .home .slider-counter .slash {
 	padding: 0 2px;
+}
+@media screen and (min-width: 1000px) {
+	.home .text {
+		padding-top: 110px;
+		margin-left: 4.25%;
+		width: 52%;
+	}
 }
 
 
@@ -475,7 +543,11 @@ section h2 {
 	display: block;
 	width: 100%;
 }
-
+@media screen and (min-width: 1000px) {
+	.production {
+		margin-bottom: 85px;
+	}
+}
 .more-link-container {
 	text-align: center;
 }
@@ -509,6 +581,7 @@ section h2 {
 
 .features {
 	text-align: center;
+	margin-bottom: 15px;
 }
 .features .container {
 }
