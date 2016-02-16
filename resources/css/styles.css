@@ -220,6 +220,7 @@ header .menu-btn .inner {
 }
 @media screen and (min-width: 640px) {
 	header {
+		min-width: 0px;
 		height: 100px;
 	}
 	header .menu-btn {
@@ -293,6 +294,9 @@ footer {
 	}
 }
 @media screen and (min-width: 1000px) {
+	main {
+		margin-top: 0px;
+	}
 	main,
 	footer {
 		margin-left: 250px;
