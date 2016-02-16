@@ -710,6 +710,9 @@ section h2 {
 		width: 21.5%;
 		margin-left: 4.66%;
 	}
+	.production .item:nth-of-type(3n-2) {
+		margin-left: 4.66%;;
+	}
 	.production .item:nth-of-type(6n-5) {
 		margin-left: 0;
 	}
@@ -864,13 +867,6 @@ section h2 {
 .popup .popup-cell {
     display: table-cell;
     vertical-align: middle;
-}
-@media screen and (min-width: 1000px) {
-	.popup,
-	.popup.active {
-		display: none;
-		/*remove!!!!!*/
-	}
 }
 
 footer {
