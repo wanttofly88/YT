@@ -125,18 +125,20 @@ span.show640.show1000 {
 }
 
 header {
-	position: relative;
+	position: fixed;
 	width: 100%;
-	height: 100px;
+	height: 76px;
 	background: #ffffff;
 	color: #0c0c0c;
 	box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.2);
 	z-index: 100;
+	min-width: 320px;
+	transform: translateZ(0px);
 }
 header .logo {
 	display: block;
-	width: 100px;
-	height: 100px;
+	width: 76px;
+	height: 76px;
 	background: url(../images/logo.svg);
 	background-size: 100%;
 }
@@ -156,8 +158,7 @@ header nav a {
 header .basket {
 	position: absolute;
 	right: 5%;
-	margin-right: 190px;
-	top: 42px;
+	top: 15px;
 }
 header .basket a {
 	color: #0c0c0c;
@@ -181,7 +182,68 @@ header .callback {
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
 }
+header .menu-btn {
+	position: absolute;
+	width: 45px;
+	height: 45px;
+	top: 15px;
+	left: 95px;
+}
+header .menu-btn .b {
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	background: #0c0c0c;
+	display: none;
+}
+header .menu-btn .b1 {
+	display: block;
+	top: 2px;
+}
+header .menu-btn .b2 {
+	display: block;
+	top: 10px;
+}
+header .menu-btn .b3 {
+	display: block;
+	top: 18px;
+}
+header .menu-btn .inner {
+	width: 25px;
+	height: 23px;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	position: absolute;
+}
+@media screen and (min-width: 640px) {
+	header {
+		height: 100px;
+	}
+	header .menu-btn {
+		top: 27px;
+		left: 127px;
+	}
+	header .logo {
+		width: 100px;
+		height: 100px;
+	}
+	header .basket {
+		position: absolute;
+		right: 5%;
+		margin-right: 190px;
+		top: 42px;
+	}
+	header .phone {
+
+	}
+}
 @media screen and (min-width: 1000px) {
+	header .menu-btn {
+		display: none;
+	}
 	header {
 		position: fixed;
 		width: 250px;
@@ -197,23 +259,38 @@ header .callback {
 		display: block;
 	}
 	header .basket {
+		bottom: 145px;
 		right: 0;
-		margin-right: 0px;
-		position: static;
-		margin-bottom: 50px;
+		top: auto;
+		margin: 0;
+		width: 100%;
 	}
 	header .phone {
-		position: static;
-		margin-bottom: 10px;
+		bottom: 75px;
+		right: 0;
+		width: 100%;
+		top: auto;
+		margin: 0px;
 	}
 	header .callback {
+		position: absolute;
+		width: 100%;
+		bottom: 50px;
 		display: block;
+		margin: 0;
 	}
 }
-
+main {
+	margin-top: 75px;
+}
 main,
 footer {
 	margin-left: 0px;
+}
+@media screen and (min-width: 640px) {
+	main {
+		margin-top: 100px;
+	}
 }
 @media screen and (min-width: 1000px) {
 	main,
@@ -221,10 +298,44 @@ footer {
 		margin-left: 250px;
 	}
 }
+
+
+.mobile-menu {
+	padding-top: 76px;
+}
+.mobile-menu .item {
+	margin: 0 auto;
+	width: 80%;
+	overflow: hidden;
+	text-align: center;
+}
+.mobile-menu .item a {
+	display: block;
+	padding-top: 9px;
+	padding-bottom: 9px;
+	color: #0c0c0c;
+	font-size: 18px;
+	font-weight: 300;
+}
+
+header nav {
+	display: none;
+	text-align: center;
+	margin-bottom: 90px;
+}
+header nav .item {
+	padding-bottom: 18px;
+}
+header nav a {
+	color: #0c0c0c;
+	font-size: 18px;
+	font-weight: 300;
+}
+
 main {
 	position: relative;
 }
-main .lines-bg {
+.lines-bg {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -234,20 +345,20 @@ main .lines-bg {
 	max-width: 1090px;
 	margin: 0 auto;
 }
-main .lines-bg .l {
+.lines-bg .l {
 	position: absolute;
 	top: 0;
 	width: 1px;
 	height: 100%;
 	background: #ebebeb;
 }
-main .lines-bg .l1 {
+.lines-bg .l1 {
 	left: 14%; 
 }
-main .lines-bg .l2 {
+.lines-bg .l2 {
 	left: 50%;
 }
-main .lines-bg .l3 {
+.lines-bg .l3 {
 	right: 14%;
 }
 main section {
@@ -267,11 +378,16 @@ main section {
 }
 h2 {
 	font-family: 'Roboto Slab', serif;
-	font-size: 40px;
+	font-size: 30px;
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
 	color: #0c0c0c;
 	margin-bottom: 32px;
+}
+@media screen and (min-width: 640px) {
+	h2 {
+		font-size: 40px;
+	}
 }
 h6 {
 	font-size: 18px;
@@ -325,6 +441,7 @@ p a {
 	height: 100%;
 	left: 0;
 	top: 0;
+	will-change: transform;
 }
 .more-link .arrow .y:before,
 .more-link .arrow .b:before {
@@ -392,12 +509,12 @@ section h2 {
 	margin-bottom: 45px;
 }
 .home h2 {
-	text-align: left;
+	text-align: center;
 	margin-bottom: 30px;
 }
 .home .slider-outer {
 	position: relative;
-	min-height: 445px;
+	min-height: 0px;
 }
 .home .slider {
 	position: relative;
@@ -405,19 +522,38 @@ section h2 {
 	height: 100%;
 }
 .home .slider .slide {
-	min-height: 445px;
+	min-height: 0px;
+	padding-bottom: 150px;
 }
 .home .slider .img {
 	position: absolute;
-	right: 0;
-	top: 0;
-	width: 37.5%;
-	height: 100%;
+	bottom: 0;
+	height: 150px;
+	width: 100%;
 	background-size: cover;
 	background-position: center;
 }
 .home .slider .wrapper {
 	height: 100%;
+}
+@media screen and (min-width: 640px) {
+	.home h2 {
+		text-align: left;
+	}
+	.home .slider-outer {
+		min-height: 445px;
+	}
+	.home .slider .slide {
+		min-height: 445px;
+		padding-bottom: 0;
+	}
+	.home .slider .img {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 37.5%;
+		height: 100%;
+	}
 }
 @media screen and (min-width: 1000px) {
 	.home {
@@ -438,6 +574,12 @@ section h2 {
 	height: 60px;
 	background: #ffffff;
 	z-index: 1;
+	display: none;
+}
+@media screen and (min-width: 640px) {
+	.home .slider-arrows {
+		display: block;
+	}
 }
 .slider-arrows .arrow {
 	position: absolute;
@@ -483,13 +625,13 @@ section h2 {
 }
 
 .home .text {
-	padding-top: 80px;
-	padding-bottom: 50px;
-	width: 60%;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	width: 100%;
 }
 .home .nfo {
 	color: #0c0c0c;
-	margin-bottom: 45px;
+	margin-bottom: 20px;
 }
 .home .nfo p {
 	font-size: 16px;
@@ -497,8 +639,8 @@ section h2 {
 .home .slider-counter {
 	position: absolute;
 	bottom: 25px;
-	left: 62.5%;
-	margin-left: 138px;
+	right: 5%;
+	margin-left: 0;
 	z-index: 2;
 	color: #ffffff;
 	font-size: 16;
@@ -513,6 +655,25 @@ section h2 {
 .home .slider-counter .slash {
 	padding: 0 2px;
 }
+@media screen and (min-width: 640px) {
+	.home .slider-counter {
+		bottom: 25px;
+		right: auto;
+		left: 62.5%;
+		margin-left: 138px;
+		z-index: 2;
+		color: #ffffff;
+		font-size: 16;
+	}
+	.home .text {
+		padding-top: 80px;
+		padding-bottom: 50px;
+		width: 60%;
+	}
+	.home .nfo {
+		margin-bottom: 45px;
+	}
+}
 @media screen and (min-width: 1000px) {
 	.home .text {
 		padding-top: 110px;
@@ -526,14 +687,15 @@ section h2 {
 	margin-bottom: 85px;
 }
 .production .container {
-	padding-bottom: 52px;
+	margin-bottom: 52px;
 }
 .production .item {
 	float: left;
-	width: 21%;
-	margin-left: 5.33%;
+	width: 47.5%;
+	margin-left: 5%;
+	margin-bottom: 40px;
 }
-.production .item:nth-of-type(5n-4) {
+.production .item:nth-of-type(3n-2) {
 	margin-left: 0;
 }
 .production .item .img {
@@ -542,6 +704,15 @@ section h2 {
 .production .item img {
 	display: block;
 	width: 100%;
+}
+@media screen and (min-width: 640px) {
+	.production .item {
+		width: 21.5%;
+		margin-left: 4.66%;
+	}
+	.production .item:nth-of-type(6n-5) {
+		margin-left: 0;
+	}
 }
 @media screen and (min-width: 1000px) {
 	.production {
@@ -557,12 +728,9 @@ section h2 {
 	margin-bottom: 110px;
 }
 .projects .container {
-	padding-bottom: 13px;
+	margin-bottom: 45px;
 }
 .projects .item {
-	width: 45.5%;
-	margin-left: 9%;
-	float: left;
 	margin-bottom: 40px;
 }
 .projects .item:nth-of-type(3n-2) {
@@ -578,6 +746,16 @@ section h2 {
 .projects .item .text {
 	line-height: 1.5;
 }
+@media screen and (min-width: 640px) {
+	.projects .item {
+		width: 47.5%;
+		margin-left: 5%;
+		float: left;
+	}
+	.projects .item:nth-of-type(3n-2) {
+		margin-left: 0;
+	}
+}
 
 .features {
 	text-align: center;
@@ -586,9 +764,6 @@ section h2 {
 .features .container {
 }
 .features .item {
-	width: 45.5%;
-	margin-left: 9%;
-	float: left;
 	margin-bottom: 40px;
 }
 .features .item:nth-of-type(3n-2) {
@@ -647,6 +822,57 @@ section h2 {
 	margin-right: 0;
 	line-height: 1.75;
 }
+@media screen and (min-width: 640px) {
+	.features .item {
+		width: 47.5%;
+		margin-left: 5%;
+		float: left;
+		margin-bottom: 40px;
+	}
+}
+
+
+.popup {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: #ffffff;
+	z-index: 100;
+	display: none;
+}
+.popup.active {
+	display: block;
+}
+.popup .popup-outer {
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+}
+.popup .popup-inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+.popup .popup-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+@media screen and (min-width: 1000px) {
+	.popup,
+	.popup.active {
+		display: none;
+		/*remove!!!!!*/
+	}
+}
+
 footer {
 	padding-top: 32px;
 	padding-bottom: 32px;
