@@ -252,6 +252,7 @@ header .menu-btn .inner {
 		left: 0;
 		top: 0;
 		text-align: center;
+		min-height: 645px;
 	}
 	header .logo {
 		margin: 45px auto 42px;
@@ -376,6 +377,9 @@ main section {
 	max-width: 1000px;
 }
 @media screen and (min-width: 1000px) {
+	header nav {
+		display: block;
+	}
 	.wrapper {
 		width: 92%;
 	}
