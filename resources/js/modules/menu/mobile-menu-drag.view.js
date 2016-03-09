@@ -51,15 +51,9 @@ define(['dispatcher', 'TweenMax'], function(dispatcher, TweenMax) {
 			});
 		});
 		menu.addEventListener('touchend', function(e) {
-			var x, y;
 			var duration;
 
 			if (e.touches.length > 1) return;
-
-			x = e.touches[0].pageX;
-			y = e.touches[0].pageY;
-
-			delta = startX - x;
 
 			if (!started) return;
 
