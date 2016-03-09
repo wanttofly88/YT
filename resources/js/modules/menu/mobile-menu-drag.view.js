@@ -5,7 +5,8 @@ define(['dispatcher', 'TweenMax'], function(dispatcher, TweenMax) {
 	var startX;
 	var startY;
 	var started = false;
-	var delta;
+	var deltaX;
+	var deltaY;
 
 	var _handleMutate = function() {
 		var menu = document.getElementsByClassName('mobile-menu')[0];
@@ -24,7 +25,8 @@ define(['dispatcher', 'TweenMax'], function(dispatcher, TweenMax) {
 			startX = e.touches[0].pageX;
 			startY = e.touches[0].pageY;
 
-			delta = 0;
+			deltaX = 0;
+			deltaY = 0;
 
 			started = true;
 
@@ -43,11 +45,12 @@ define(['dispatcher', 'TweenMax'], function(dispatcher, TweenMax) {
 			x = e.touches[0].pageX;
 			y = e.touches[0].pageY;
 
-			delta = startX - x;
-			if (delta < 0) return;
+			deltaX = startX - x;
+			deltaY = startY - y;
+			if (deltaX < 0) return;
 
 			TweenMax.to(menu, 0, {
-				x: -delta
+				x: -deltaX
 			});
 		});
 		menu.addEventListener('touchend', function(e) {
@@ -57,11 +60,11 @@ define(['dispatcher', 'TweenMax'], function(dispatcher, TweenMax) {
 
 			if (!started) return;
 
-			if (Math.abs(y - startY) >= Math.abs(x - startX)) return;
+			if (Math.abs(deltaY) >= Math.abs(deltaX)) return;
 
 			duration = +new Date - timeStart;
 
-			if ((duration < 250 && delta > 20) || delta > 100) {
+			if ((duration < 250 && deltaX > 20) || deltaX > 100) {
 				dispatcher.dispatch({
 					type: 'mobile-menu-deactivate'
 				});
