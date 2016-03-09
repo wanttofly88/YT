@@ -175,6 +175,7 @@ header .menu-btn {
 	height: 45px;
 	top: 15px;
 	left: 95px;
+	trnasform: translateZ(0px);
 }
 header .menu-btn .inner {
 	width: 25px;
@@ -347,6 +348,7 @@ main {
 	box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
 	transform: translateX(-250px);
 	-webkit-user-drag: none;
+	will-change: transform;
 }
 .mobile-menu nav {
 	margin-top: 76px;
@@ -379,6 +381,7 @@ main {
 
 main {
 	position: relative;
+	will-change: transform;
 }
 .lines-bg {
 	position: absolute;
@@ -976,6 +979,7 @@ footer {
 	text-align: center;
 	z-index: 2;
 	background: #ffffff;
+	will-change: transform;
 }
 footer .cr {
 	padding-top: 32px;
