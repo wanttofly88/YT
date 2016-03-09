@@ -157,7 +157,7 @@ header nav .item {
 }
 header .basket {
 	position: absolute;
-	right: 5%;
+	right: 30px;
 	top: 15px;
 	color: #0c0c0c;
 	font-size: 12px;
@@ -166,7 +166,7 @@ header .basket {
 }
 header .phone {
 	position: absolute;
-	right: 5%;
+	right: 30px;
 	top: 40px;
 	font-size: 18px;
 	font-weight: 600;
@@ -230,7 +230,7 @@ header .menu-btn .inner {
 	}
 	header .basket {
 		position: absolute;
-		right: 5%;
+		right: 30px;
 		margin-right: 190px;
 		top: 42px;
 	}
@@ -344,10 +344,9 @@ main {
 }
 .lines-bg {
 	position: absolute;
-	width: 100%;
 	height: 100%;
 	left: 0;
-	right: 0;
+	right: 30px;
 	top: 0;
 	max-width: 1090px;
 	margin: 0 auto;
@@ -357,19 +356,23 @@ main {
 	top: 0;
 	width: 1px;
 	height: 100%;
-	background: #ebebeb;
+	background: #ededed;
 }
 .lines-bg .l1 {
-	left: 14%; 
+	left: 12.5%;
+	margin-left: 15px;
 }
 .lines-bg .l2 {
-	left: 38%;
+	left: 37.5%;
+	margin-left: 15px;
 }
 .lines-bg .l3 {
-	right: 38%;
+	right: 37.5%;
+	margin-right: -15px;
 }
 .lines-bg .l4 {
-	right: 14%;
+	right: 12.5%;
+	margin-right: -15px;
 }
 main section {
 	position: relative;
