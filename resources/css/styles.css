@@ -345,10 +345,10 @@ main {
 .lines-bg {
 	position: absolute;
 	height: 100%;
-	left: 0;
+	left: 30px;
 	right: 30px;
 	top: 0;
-	max-width: 1090px;
+	max-width: 1000px;
 	margin: 0 auto;
 }
 .lines-bg .l {
@@ -359,20 +359,16 @@ main {
 	background: #ededed;
 }
 .lines-bg .l1 {
-	left: 12.5%;
-	margin-left: 15px;
+	left: 10.87%;
 }
 .lines-bg .l2 {
-	left: 37.5%;
-	margin-left: 15px;
+	left: 36.95%;
 }
 .lines-bg .l3 {
-	right: 37.5%;
-	margin-right: -15px;
+	right: 36.95%;
 }
 .lines-bg .l4 {
-	right: 12.5%;
-	margin-right: -15px;
+	right: 10.87%;
 }
 main section {
 	position: relative;
