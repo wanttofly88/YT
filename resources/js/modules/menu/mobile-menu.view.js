@@ -6,6 +6,11 @@ define(['dispatcher', 'menu/mobile-menu.store', 'TweenMax'], function(dispatcher
 	var menu;
 	var overlay;
 	var status = 'inactive';
+	var body;
+
+	var _preventTouchScroll = function(e) {
+		e.preventDefault();
+	}
 
 	var _handleChange = function() {
 		var storeData = store.getData();
@@ -14,6 +19,8 @@ define(['dispatcher', 'menu/mobile-menu.store', 'TweenMax'], function(dispatcher
 
 		status = storeData.status;
 		if (status === 'active') {
+			body.addEventListener('touchmove', _preventTouchScroll);
+			body.classList.add('prevent-scroll');
 			TweenMax.to(menu, 0.3, {
 				x: 0,
 				ease: Cubic.easeOut 
@@ -27,6 +34,8 @@ define(['dispatcher', 'menu/mobile-menu.store', 'TweenMax'], function(dispatcher
 			}
 		}
 		if (status === 'inactive') {
+			body.removeEventListener('touchmove', _preventTouchScroll);
+			body.classList.remove('prevent-scroll');
 			TweenMax.to(menu, 0.3, {
 				x: -250,
 				ease: Cubic.easeOut
@@ -46,6 +55,7 @@ define(['dispatcher', 'menu/mobile-menu.store', 'TweenMax'], function(dispatcher
 		menu = document.getElementsByClassName('mobile-menu')[0];
 		footer = document.getElementsByTagName('footer')[0];
 		overlay = document.getElementsByClassName('mobile-menu-overlay')[0];
+		body = document.getElementsByTagName('body')[0];
 
 		if (!main || !footer || !menu) {
 			console.warn('menu structure corrupted');
