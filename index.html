@@ -4,48 +4,68 @@
 	<meta charset="UTF-8">
 	<title>ytong</title>
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, minimal-ui"/>
+	<meta name="resources-path" content="resources">
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="resources/css/styles.css">
+	<script src="resources/js/libs/modernizr.js"></script>
+	<script data-main="resources/js/app" src="resources/js/require.js"></script>
 </head>
 <body>
 	<div class="page-wrapper">
-		<div class="popup">
-			<div class="popup-outer">
-				<div class="popup-inner">
-					<div class="popup-cell">
-						<div class="wrapper">
-							<nav class="mobile-menu">
-								<div class="item">
-									<a href="production.html">Продукция
-									</a>
-								</div>
-								<div class="item">
-									<a href="projects.html">Проекты домов</a>
-								</div>
-								<div class="item">
-									<a href="actions.html">Акции</a>
-								</div>
-								<div class="item">
-									<a href="services.html">Сервисы</a>
-								</div>
-								<div class="item">
-									<a href="about.html">О компании</a>
-								</div>
-								<div class="item">
-									<a href="buy.html">Как купить</a>
-								</div>
-								<div class="item">
-									<a href="contacts.html">Контакты</a>
-								</div>
-							</nav>
-						</div>
-					</div>
+		<div class="mobile-menu-overlay"></div>
+		<div class="mobile-menu">
+			<div class="nav-inner">
+				<div class="nav-cell">
+					<nav>
+						<a class="item" href="production.html">
+							<span class="masked-link">
+								<span class="i">Продукция</span>
+								<span class="a">Продукция</span>
+							</span>
+						</a>
+						<a class="item" href="projects.html">
+							<span class="masked-link">
+								<span class="i">Проекты домов</span>
+								<span class="a">Проекты домов</span>
+							</span>
+						</a>
+						<a class="item" href="actions.html">
+							<span class="masked-link">
+								<span class="i">Акции</span>
+								<span class="a">Акции</span>
+							</span>
+						</a>
+						<a class="item" href="services.html">
+							<span class="masked-link">
+								<span class="i">Сервисы</span>
+								<span class="a">Сервисы</span>
+							</span>
+						</a>
+						<a class="item" href="about.html">
+							<span class="masked-link">
+								<span class="i">О компании</span>
+								<span class="a">О компании</span>
+							</span>
+						</a>
+						<a class="item" href="buy.html">
+							<span class="masked-link">
+								<span class="i">Как купить</span>
+								<span class="a">Как купить</span>
+							</span>
+						</a>
+						<a class="item" href="contacts.html">
+							<span class="masked-link">
+								<span class="i">Контакты</span>
+								<span class="a">Контакты</span>
+							</span>
+						</a>
+					</nav>
 				</div>
 			</div>
 		</div>
 		<header>
 			<div class="logo"></div>
-			<div class="menu-btn">
+			<div class="menu-btn mobile-menu-toggle">
 				<div class="inner">
 					<div class="b b1"></div>
 					<div class="b b2"></div>
