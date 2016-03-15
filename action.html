@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ytong</title>
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, minimal-ui"/>
+	<meta name="resources-path" content="resources">
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="resources/css/styles.css">
+	<script src="resources/js/libs/modernizr.js"></script>
+	<script data-main="resources/js/app" src="resources/js/require.js"></script>
+</head>
+<body>
+	<div class="page-wrapper">
+		<div class="popup-overlay view-popup-close" id="total-overlay"></div>
+		<div class="popup view-popup" data-id="callback-popup">
+			<div class="popup-outer">
+				<div class="close view-popup-close show320">
+					<div class="bars">
+						<div class="b b1"></div>
+						<div class="b b2"></div>
+					</div>
+				</div>
+				<div class="popup-inner">
+					<div class="popup-cell">
+						<div class="wrapper">
+							<div class="close view-popup-close show640 show1000">
+								<div class="bars">
+									<div class="b b1"></div>
+									<div class="b b2"></div>
+								</div>
+							</div>
+							<div class="form-wrapper">
+								<div class="nm">Заказать звонок</div>
+								<form action="#" class="view-form">
+									<div class="ln">
+										<label class="input-wrapper">
+											<span class="input-placeholder">Имя</span>
+											<input type="text" class="text" name="name">
+										</label>
+									</div>
+									<div class="ln">
+										<label class="input-wrapper">
+											<span class="input-placeholder">Телефон</span>
+											<input type="tel" class="text" name="name">
+										</label>
+									</div>
+									<div class="ln submit-line">
+										<input type="submit" class="submit" value="Заказать звонок">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup view-popup" data-id="production-popup">
+			<div class="popup-outer">
+				<div class="close view-popup-close show320">
+					<div class="bars">
+						<div class="b b1"></div>
+						<div class="b b2"></div>
+					</div>
+				</div>
+				<div class="popup-inner">
+					<div class="popup-cell">
+						<div class="wrapper">
+							<div class="close view-popup-close show640 show1000">
+								<div class="bars">
+									<div class="b b1"></div>
+									<div class="b b2"></div>
+								</div>
+							</div>
+							<div class="form-wrapper">
+								<div class="nm">Заказать продукцию</div>
+								<form action="#" class="view-form">
+									<div class="ln">
+										<label class="input-wrapper">
+											<span class="input-placeholder">Имя</span>
+											<input type="text" class="text" name="name">
+										</label>
+									</div>
+									<div class="ln">
+										<label class="input-wrapper">
+											<span class="input-placeholder">Телефон</span>
+											<input type="tel" class="text" name="name">
+										</label>
+									</div>
+									<div class="ln">
+										<label class="input-wrapper">
+											<span class="input-placeholder">Email</span>
+											<input type="tel" class="text" name="name">
+										</label>
+									</div>
+									<div class="ln">
+										<label class="input-wrapper">
+											<span class="input-placeholder">Адрес доставки</span>
+											<input type="tel" class="text" name="name">
+										</label>
+									</div>
+									<div class="ln submit-line">
+										<input type="submit" class="submit" value="отправить заказ">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup view-popup" data-id="project-popup">
+			<div class="popup-outer">
+				<div class="close view-popup-close show320">
+					<div class="bars">
+						<div class="b b1"></div>
+						<div class="b b2"></div>
+					</div>
+				</div>
+				<div class="popup-inner">
+					<div class="popup-cell">
+						<div class="wrapper">
+							<div class="close view-popup-close show640 show1000">
+								<div class="bars">
+									<div class="b b1"></div>
+									<div class="b b2"></div>
+								</div>
+							</div>
+							<div class="form-wrapper">
+								<div class="nm">Заказать проект</div>
+								<form action="#" class="view-form">
+									<div class="ln">
+										<label class="input-wrapper">
+											<span class="input-placeholder">Имя</span>
+											<input type="text" class="text" name="name">
+										</label>
+									</div>
+									<div class="ln">
+										<label for="project-input" class="select-wrapper">
+											<span class="select-display" data-id="project-select">Кельн1</span>
+											<select class="select view-select" name="project" id="project-input" data-id="project-select">
+												<option value="Кельн1">Кельн</option>
+												<option value="Кельн2">Кельн</option>
+												<option value="Кельн3">Кельн</option>
+											</select>
+										</label>
+									</div>
+									<div class="ln">
+										<label class="input-wrapper">
+											<span class="input-placeholder">Email</span>
+											<input type="tel" class="text" name="name">
+										</label>
+									</div>
+									<div class="ln">
+										<label class="input-wrapper">
+											<span class="input-placeholder">Адрес доставки</span>
+											<input type="tel" class="text" name="name">
+										</label>
+									</div>
+									<div class="ln submit-line">
+										<input type="submit" class="submit" value="отправить заказ">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="mobile-menu-overlay"></div>
+		<div class="mobile-menu">
+			<div class="nav-inner">
+				<div class="nav-cell">
+					<nav>
+						<a class="item" href="production.html">
+							<span class="masked-link">
+								<span class="i">Продукция</span>
+								<span class="a">Продукция</span>
+							</span>
+						</a>
+						<a class="item" href="projects.html">
+							<span class="masked-link">
+								<span class="i">Проекты домов</span>
+								<span class="a">Проекты домов</span>
+							</span>
+						</a>
+						<a class="item" href="actions.html">
+							<span class="masked-link">
+								<span class="i">Акции</span>
+								<span class="a">Акции</span>
+							</span>
+						</a>
+						<a class="item" href="services.html">
+							<span class="masked-link">
+								<span class="i">Сервисы</span>
+								<span class="a">Сервисы</span>
+							</span>
+						</a>
+						<a class="item" href="buy.html">
+							<span class="masked-link">
+								<span class="i">Как купить</span>
+								<span class="a">Как купить</span>
+							</span>
+						</a>
+						<a class="item" href="contacts.html">
+							<span class="masked-link">
+								<span class="i">Контакты</span>
+								<span class="a">Контакты</span>
+							</span>
+						</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<header>
+			<div class="logo"></div>
+			<div class="menu-btn mobile-menu-toggle">
+				<div class="inner">
+					<div class="b b1"></div>
+					<div class="b b2"></div>
+					<div class="b b3"></div>
+				</div>
+			</div>
+			<nav>
+				<a class="item" href="production.html">
+					<span class="masked-link">
+						<span class="i">Продукция</span>
+						<span class="a">Продукция</span>
+					</span>
+				</a>
+				<a class="item" href="projects.html">
+					<span class="masked-link">
+						<span class="i">Проекты домов</span>
+						<span class="a">Проекты домов</span>
+					</span>
+				</a>
+				<a class="item" href="actions.html">
+					<span class="masked-link">
+						<span class="i">Акции</span>
+						<span class="a">Акции</span>
+					</span>
+				</a>
+				<a class="item" href="services.html">
+					<span class="masked-link">
+						<span class="i">Сервисы</span>
+						<span class="a">Сервисы</span>
+					</span>
+				</a>
+				<a class="item" href="buy.html">
+					<span class="masked-link">
+						<span class="i">Как купить</span>
+						<span class="a">Как купить</span>
+					</span>
+				</a>
+				<a class="item" href="contacts.html">
+					<span class="masked-link">
+						<span class="i">Контакты</span>
+						<span class="a">Контакты</span>
+					</span>
+				</a>
+			</nav>
+			<a href="cart.html" class="cart">
+				<span>список покупок <span>(17)</span></span>
+			</a>
+			<a href="tel:88000000000" class="phone">
+				<span>8 800 000 00 00</span>
+			</a>
+			<span class="callback">
+				<span>Заказать звонок</span>
+			</span>
+		</header>
+		<main>
+			<div class="lines-bg">
+				<div class="l l1"></div>
+				<div class="l l2"></div>
+				<div class="l l3"></div>
+				<div class="l l4"></div>
+			</div>
+			<section class="action">
+				<img src="tmp/action-big.jpg" alt="">
+			<!-- 	<div class="bg" style="background-image:url(tmp/action.jpg)"></div> -->
+				<div class="wrapper"></div>
+			</section>
+			<article class="narrow">
+				<div class="wrapper">
+					<h1>Акция «YTONG PAUSE» Акция</h1>
+					<blockquote>Уважаемые Дамы и Господа! Мы продлили период регистрации на акцию YTONG Pause до 01 марта 2016 года.</blockquote>
+					<p>Зарегистрируйтесь на <a href="#">сайте</a>, и получите <strong>скидки и спец. условия на продукцию YTONG</strong>, а так же воспользуйтесь нашими бесплатными услугами! Пройдя регистрацию на <a href="#">сайте</a> для получения вашего персонального ID на скидку и оплатив товар у официального дистрибьютора YTONG до 01.03.2016, вы обезопасите себя от сезонного подорожания продукции и дополнительно получите скидку на продукцию YTONG.</p>
+					<p>По условиям акции YTONG предоставляет услугу хранения товара на складе до весны.</p>
+					<p>Вывоз продукции осуществляется <strong>в период с 18.04.16 по 31.05.16.</strong></p>
+					<h5>Все это учтено в типовых проектах YTONG:</h5>
+					<ul>
+						<li>200 руб/м3 для категорий продукции YTONG® D400</li>
+						<li>100 руб/м3 для категорий продукции YTONG® D500 </li>
+						<li>10% от цены Прайс-листа YTONG® на U-блоки YTONG® </li>
+						<li>10% от цены Прайс-листа YTONG® на Инструменты, за исключением «Ножовки».</li>
+						<li>20% от цены Прайс-листа YTONG® на Сборно-монолитные перекрытия</li>
+						<li>10% от цены Прайс-листа YTONG® на Перемычки</li>
+						<li>10% от цены Прайс-листа YTONG® на Раствор</li>
+					</ul>
+					<p>Если вы хотите вывезти продукцию сейчас и получить двойную скидку на газобетонные блоки YTONG, то предлагаем вам воспользоваться акцией <a href="#">Discount online</a>.</p>
+				</div>
+			</article>
+		</main>
+		<footer>
+			<div class="wrapper">
+				<div class="cr">© 2016 YTONG SHOP. Все права защищены</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

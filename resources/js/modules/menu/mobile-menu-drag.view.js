@@ -60,7 +60,12 @@ define(['dispatcher', 'TweenMax'], function(dispatcher, TweenMax) {
 
 			if (!started) return;
 
-			if (Math.abs(deltaY) >= Math.abs(deltaX)) return;
+			if (Math.abs(deltaY) >= Math.abs(deltaX)) {
+				dispatcher.dispatch({
+					type: 'mobile-menu-activate'
+				});
+				return;
+			}
 
 			duration = +new Date - timeStart;
 
