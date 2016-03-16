@@ -44,7 +44,14 @@ require([
 	'popup/popup-close.view',
 	'overlay/overlay.view',
 	'selects/selects.view',
-	'selects/selects-display.view'
+	'selects/selects-display.view',
+	'cart/cart.view',
+	'cart/cart-number.view',
+	'cart/cart-price-total.view',
+	'cart/cart-remove-all.view',
+	'cart/cart-number-total.view',
+	'drop-down/drop-down.view',
+	'drop-down/drop-down-controls.view'
 	], function(
 		domReady,
 		vhUnits,
@@ -66,7 +73,14 @@ require([
 		popupClose,
 		overlay,
 		selects,
-		selectsDisplay
+		selectsDisplay,
+		cart,
+		cartNumber,
+		cartPriceTotal,
+		cartRemoveAll,
+		cartNumberTotal,
+		dropDown,
+		dropDownControls
 	) {
 	domReady(function () {
 		vhUnits.init();
@@ -89,5 +103,12 @@ require([
 		overlay.init();
 		selects.init();
 		selectsDisplay.init();
+		cart.init();
+		cartNumber.init();
+		cartPriceTotal.init();
+		cartRemoveAll.init();
+		cartNumberTotal.init();
+		dropDown.init();
+		dropDownControls.init();
 	});
 });
