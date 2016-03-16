@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<title>ytong</title>
@@ -11,7 +11,7 @@
 	<script data-main="resources/js/app" src="resources/js/require.js"></script>
 </head>
 <body>
-	<div class="page-wrapper">
+	<div class="page-wrapper contacts-page">
 		<div class="popup-overlay view-popup-close" id="total-overlay"></div>
 		<div class="popup view-popup" data-id="callback-popup">
 			<div class="popup-outer">
@@ -226,9 +226,12 @@
 						<span class="a">Продукция</span>
 					</span>
 				</a>
-				<span class="item active">
-					<span>Проекты домов</span>
-				</span>
+				<a class="item" href="projects.html">
+					<span class="masked-link">
+						<span class="i">Проекты домов</span>
+						<span class="a">Проекты домов</span>
+					</span>
+				</a>
 				<a class="item" href="actions.html">
 					<span class="masked-link">
 						<span class="i">Акции</span>
@@ -247,12 +250,9 @@
 						<span class="a">Как купить</span>
 					</span>
 				</a>
-				<a class="item" href="contacts.html">
-					<span class="masked-link">
-						<span class="i">Контакты</span>
-						<span class="a">Контакты</span>
-					</span>
-				</a>
+				<span class="item active">
+					<span>Контакты</span>
+				</span>
 			</nav>
 			<a href="cart.html" class="cart">
 				<span>список покупок <span>(17)</span></span>
@@ -264,7 +264,16 @@
 				<span>Заказать звонок</span>
 			</span>
 		</header>
-		<main>
+
+		<section class="map-section">
+			<div class="map-markers">
+				<div class="map-marker" data-lat="55.886620" data-lng="37.418367" data-title="дом 7, БЦ «Созвездие успеха», сектора А, офис 40"></div>
+				<div class="map-marker" data-lat="55.501179" data-lng="36.058611" data-title="дом 7, БЦ «Созвездие успеха», сектора А, офис 40"></div>
+			</div>
+			<div class="map map-view" data-lat="55.886620" data-lng="37.418367" data-zoom="16"></div>
+		</section>
+
+		<main class="main-contacts">
 			<div class="lines-bg">
 				<div class="l l1"></div>
 				<div class="l l2"></div>
@@ -273,11 +282,10 @@
 			</div>
 			
 			<section class="contacts">
-				<div class="map"></div>
 				<div class="wrapper">
 					<div class="right">
 						<div class="contact">
-							<div class="nm drop-down-control active" data-id="dd1">Офис продаж</div>
+							<div class="nm drop-down-control map-control active" data-id="dd1" data-lat="55.886620" data-lng="37.418367">Офис продаж</div>
 							<div class="drop-down-container active" data-id="dd1"
 								data-height-mobile="0"
 								data-height-tablet="0"
@@ -296,8 +304,8 @@
 									</div>
 									<div class="addr">Россия, Химки, Юбилейный проспект, дом 7, БЦ «Созвездие успеха», сектора А, офис 40</div>
 
-									<div class="map-link-container">
-										<span class="map-link ico-link a-d">
+									<div class="route-link-container">
+										<span class="ico-link a-d drop-down-control" data-id="ddin1">
 											<span class="arrow">
 												<span class="y">
 												</span>
@@ -310,11 +318,31 @@
 											</span>
 										</span>
 									</div>
+
+									<div class="drop-down-container" data-id="ddin1"
+										data-height-mobile="0"
+										data-height-tablet="0"
+										data-height-desktop="0">
+										<div class="drop-down-inner">
+											<article>
+												<h6>Проезд</h6>
+												<ul>
+													<li>от станции метро «Планерная» на троллейбусах №№202, 203 или автобусе №383 до остановки «ул. Молодежная»;</li>
+													<li>от станции метро «Речной вокзал» на автобусе №443 или на маршрутном такси №986 до остановки «Универмаг».</li>
+												</ul>
+												<h6>Бизне-центр «Созвездие успеха» расположен в большом здании «Дом с часами» имеет два отдельных входа:</h6>
+												<ul>
+													<li>Сектор «А» проход мимо «Росинтербанка» на внутреннюю территорию, домофон №2 (Бизнес-центр «Созвездие успеха» Сектор «А»);</li>
+													<li>Сектор «Б»: в центральной части здания мезду третьим и четвертым подъездами дома отдельный вход с вывеской.</li>
+												</ul>
+											</article>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 						<div class="contact">
-							<div class="nm drop-down-control" data-id="dd2">Склад</div>
+							<div class="nm drop-down-control map-control" data-lat="55.501179" data-lng="36.058611" data-id="dd2">Склад</div>
 							<div class="drop-down-container" data-id="dd2"
 								data-height-mobile="0"
 								data-height-tablet="0"
@@ -322,35 +350,18 @@
 								<div class="drop-down-inner">
 									<div class="phones">
 										<div class="item">
-											<a href="tel:+74952015118">+7 (495) 201-51-18 </a>
-										</div>
-										<div class="item">
-											<a href="tel:+79646418567">+7 964 641-85-67</a>
+											<a href="tel:+89166115223">+7 916 611-52-23</a>
 										</div>
 									</div>
 									<div class="mail">
 										<a href="mailto:info@puzzledom.ru">info@puzzledom.ru</a>
 									</div>
-									<div class="addr">Россия, Химки, Юбилейный проспект, дом 7, БЦ «Созвездие успеха», сектора А, офис 40</div>
-
-									<div class="map-link-container">
-										<span class="map-link ico-link a-d">
-											<span class="arrow">
-												<span class="y">
-												</span>
-												<span class="b">
-												</span>
-											</span>
-											<span class="tx">
-												<span class="i">показать как проехать</span>
-												<span class="a">показать как проехать</span>
-											</span>
-										</span>
-									</div>
+									<div class="addr">г. Можайск, ул. Мира дом 105</div>
 								</div>
 							</div>
 						</div>
 					</div>
+					<div class="clear"></div>
 				</div>
 			</section>
 		</main>

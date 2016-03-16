@@ -50,13 +50,14 @@ define(['dispatcher', 'drop-down/drop-down.store', 'resize/resize.store', 'resiz
 		var bpName = bpStore.getData().breakpoint.name;
 		var h;
 
+		if (item.element.clientHeight === 0) return;
+
 		h = item.heights[bpName] || 0;
 		if (item.inner.clientHeight <= h) h = item.inner.clientHeight;
 
 		item.element.classList.remove('active');
 		item.element.style.height = (item.inner.clientHeight) + 'px';
 
-		clearTimeout(to);
 		setTimeout(function() {
 			item.element.style.height = h + 'px';
 		}, 20);

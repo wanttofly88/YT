@@ -1,4 +1,4 @@
-define(['dispatcher', 'menu/mobile-menu.store', 'TweenMax'], function(dispatcher, store, TweenMax) {
+define(['dispatcher', 'menu/mobile-menu.store', 'resize/breakpoint.store', 'TweenMax'], function(dispatcher, store, bpStore, TweenMax) {
 
 	"use strict";
 
@@ -7,6 +7,7 @@ define(['dispatcher', 'menu/mobile-menu.store', 'TweenMax'], function(dispatcher
 	var overlay;
 	var status = 'inactive';
 	var body;
+	var map;
 
 	var _preventTouchScroll = function(e) {
 		e.preventDefault();
@@ -29,6 +30,12 @@ define(['dispatcher', 'menu/mobile-menu.store', 'TweenMax'], function(dispatcher
 				x: 100,
 				ease: Cubic.easeOut 
 			})
+			if (map) {
+				TweenMax.to([map], 0.3, {
+					x: 100,
+					ease: Cubic.easeOut 
+				})
+			}
 			if (overlay) {
 				overlay.classList.add('active');
 			}
@@ -44,6 +51,12 @@ define(['dispatcher', 'menu/mobile-menu.store', 'TweenMax'], function(dispatcher
 				x: 0,
 				ease: Cubic.easeOut 
 			})
+			if (map) {
+				TweenMax.to([map], 0.3, {
+					x: 0,
+					ease: Cubic.easeOut 
+				})
+			}
 			if (overlay) {
 				overlay.classList.remove('active');
 			}
@@ -54,6 +67,7 @@ define(['dispatcher', 'menu/mobile-menu.store', 'TweenMax'], function(dispatcher
 		main = document.getElementsByTagName('main')[0];
 		menu = document.getElementsByClassName('mobile-menu')[0];
 		footer = document.getElementsByTagName('footer')[0];
+		map  = document.getElementsByClassName('map-section')[0];
 		overlay = document.getElementsByClassName('mobile-menu-overlay')[0];
 		body = document.getElementsByTagName('body')[0];
 
@@ -61,8 +75,15 @@ define(['dispatcher', 'menu/mobile-menu.store', 'TweenMax'], function(dispatcher
 			console.warn('menu structure corrupted');
 			return;
 		}
+	}
 
-
+	var _handleBPChange = function() {
+		if (status === 'inactive') return;
+		if (bpStore.getData().breakpoint.name === 'desktop') {
+			dispatcher.dispatch({
+				type: 'mobile-menu-deactivate'
+			});
+		}
 	}
 
 	var init = function() {
@@ -70,6 +91,7 @@ define(['dispatcher', 'menu/mobile-menu.store', 'TweenMax'], function(dispatcher
 		_handleChange();
 
 		store.eventEmitter.subscribe(_handleChange);
+		bpStore.eventEmitter.subscribe(_handleBPChange);
 
 		dispatcher.subscribe(function(e) {
 			if (e.type === 'mutate') {

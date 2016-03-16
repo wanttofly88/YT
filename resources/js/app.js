@@ -51,7 +51,11 @@ require([
 	'cart/cart-remove-all.view',
 	'cart/cart-number-total.view',
 	'drop-down/drop-down.view',
-	'drop-down/drop-down-controls.view'
+	'drop-down/drop-down-controls.view',
+	'drop-down/drop-down-contacts.view',
+	'map/map.view',
+	'map/map-markers.view',
+	'map/map-controls.view'
 	], function(
 		domReady,
 		vhUnits,
@@ -80,7 +84,11 @@ require([
 		cartRemoveAll,
 		cartNumberTotal,
 		dropDown,
-		dropDownControls
+		dropDownControls,
+		dropDownContacts,
+		map,
+		mapMarkers,
+		mapControls
 	) {
 	domReady(function () {
 		vhUnits.init();
@@ -110,5 +118,9 @@ require([
 		cartNumberTotal.init();
 		dropDown.init();
 		dropDownControls.init();
+		dropDownContacts.init();
+		map.init();
+		mapMarkers.init();
+		mapControls.init();
 	});
 });

@@ -13,9 +13,9 @@ define(['dispatcher'], function(dispatcher) {
 				id: e.id,
 				active: e.active || false
 			}
-			if (e.active) {
-				active = e.id;
-			}
+			// if (e.active) {
+			// 	active = e.id;
+			// }
 		}
 
 		if (e.type === 'drop-down-remove') {
@@ -26,46 +26,45 @@ define(['dispatcher'], function(dispatcher) {
 		if (e.type === 'drop-down-toggle') {
 			if (!items.hasOwnProperty(e.id)) return;
 			if (items[e.id].disabled) return;
-			console.log(active);
 
 			items[e.id].active = !items[e.id].active;
 
-			if (items[e.id].active) {
-				if (active) items[active].active = false;
-				active = e.id;
+			// if (items[e.id].active) {
+			// 	if (active) items[active].active = false;
+			// 	active = e.id;
 
-			} else {
-				if (active) items[active].active = false;
-				active = false;
-			}
+			// } else {
+			// 	if (active) items[active].active = false;
+			// 	active = false;
+			// }
 
 			eventEmitter.dispatch({
 				type: 'change'
 			});
 		}
 
-		if (e.type === 'drop-down-activate') {
+		if (e.type === 'drop-down-open') {
 			if (!items.hasOwnProperty(e.id)) return;
 			if (items[e.id].active === true) return;
 
 			items[e.id].active = true;
 
-			if (active) items[active].active = false;
-			active = e.id;
+			// if (active) items[active].active = false;
+			// active = e.id;
 
 			eventEmitter.dispatch({
 				type: 'change'
 			});
 		}
 
-		if (e.type === 'drop-down-deactivate') {
+		if (e.type === 'drop-down-close') {
 			if (!items.hasOwnProperty(e.id)) return;
 			if (items[e.id].active === false) return;
 
 			items[e.id].active = false;
 
-			if (active) items[active].active = false;
-			active = false;
+			// if (active) items[active].active = false;
+			// active = false;
 
 			eventEmitter.dispatch({
 				type: 'change'

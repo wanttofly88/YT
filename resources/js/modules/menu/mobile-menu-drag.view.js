@@ -18,8 +18,9 @@ define(['dispatcher', 'TweenMax'], function(dispatcher, TweenMax) {
 		});
 
 		menu.addEventListener('touchstart', function(e) {
-
 			if (e.touches.length > 1) return;
+
+			e.stopPropagaion();
 
 			timeStart =  +new Date;
 			startX = e.touches[0].pageX;
@@ -39,6 +40,8 @@ define(['dispatcher', 'TweenMax'], function(dispatcher, TweenMax) {
 		menu.addEventListener('touchmove', function(e) {
 			var x, y;
 
+			e.stopPropagaion();
+
 			if (e.touches.length > 1) return;
 			if (!started) return;
 
@@ -55,6 +58,8 @@ define(['dispatcher', 'TweenMax'], function(dispatcher, TweenMax) {
 		});
 		menu.addEventListener('touchend', function(e) {
 			var duration;
+
+			e.stopPropagaion();
 
 			if (e.touches.length > 1) return;
 

@@ -371,8 +371,12 @@ main {
 main {
 	margin-left: 0px;
 }
+.contacts-page main {
+	margin-bottom: 0px;
+}
 @media screen and (min-width: 640px) {
 	main {
+		margin-bottom: 0px;
 		padding-top: 100px;
 	}
 }
@@ -458,6 +462,9 @@ main {
 	top: 0;
 	max-width: 1000px;
 	margin: 0 auto;
+}
+.contacts-page .lines-bg {
+	display: none;
 }
 .lines-bg .l {
 	position: absolute;
@@ -1758,11 +1765,17 @@ footer .cr {
 	font-size: 12px;
 	color: #0c0c0c;
 }
+@media screen and (min-width: 640px) {
+	.contacts-page footer {
+		position: fixed;
+	}
+}
 @media screen and (min-width: 1000px) {
 	footer {
 		left: 250px;
 	}
 }
+
 
 .order {
 	padding-top: 60px;
@@ -2347,34 +2360,47 @@ form option {
 .cssanimations .load-complete footer {
 	opacity: 1;
 }*/
-.contacts {
-	position: absolute;
-	top: 0;
-	left: 0;
+.map-section {
+	position: relative;
 	width: 100%;
-	bottom: 100px;
-	background: #ffffff;
+	height: 200px;
+	margin-top: 76px;
 }
 @media screen and (min-width: 640px) {
-	.contacts {
+	.map-section {
+		position: fixed;
+		margin-top: 0;
+		width: 50%;
+		height: auto;
+		left: 0px;
+		top: 100px;
 		bottom: 80px;
+		z-index: 4;
+		trnasform: translateZ(0px);
 	}
 }
-.contacts .map {
+@media screen and (min-width: 1000px) {
+	.map-section {
+		top: 0;
+		width: calc(50% - 125px);
+		left: 250px;
+		trnasform: translateZ(0px);
+	}
+}
+.map-section .map {
 	position: absolute;
-	width: 50%;
-	height: 100%;
 	left: 0;
+	height: 100%;
+	width: 100%;
 	top: 0;
-	background: #1cc;
+	background: #f2f2f2;
 }
-.contacts .right {
-	width: 50%;
-	float: right;
+.contacts {
+	background: #ffffff;
 }
+
 .contact {
-	padding-top: 65px;
-	margin-left: 50px;
+	margin-left: 0px;
 }
 .contact .nm {
 	font-family: 'Roboto Slab', serif;
@@ -2387,6 +2413,15 @@ form option {
 	.contact .nm {
 		font-size: 40px;
 		font-weight: bold;
+	}
+	.contacts .right {
+		margin-top: 0;
+		width: 50%;
+		padding-top: 65px;
+		float: right;
+	}
+	.contact {
+		margin-left: 50px;
 	}
 }
 .contact .phones {
@@ -2412,9 +2447,30 @@ form option {
 	line-height: 1.75;
 	margin-bottom: 43px;
 }
+.contact .route-link-container {
+	padding-bottom: 30px;
+}
+.contact article {
+	margin-top: 0;
+	padding-bottom: 50px;
+}
+.contact article *:first-child {
+	margin-top: 0 !important;
+}
+.contact article *:last-child {
+	margin-bottom: 0 !important;
+}
+
 .drop-down-container {
 	overflow: hidden;
+	height: 0;
 	transition: height 0.3s;
+}
+.drop-down-container.active {
+	height: auto;
+}
+.drop-down-container.initialized {
+
 }
 .drop-down-control {
 	cursor: pointer;
