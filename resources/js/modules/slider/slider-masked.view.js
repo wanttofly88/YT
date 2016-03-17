@@ -58,6 +58,11 @@ define(['dispatcher', 'slider/slider.store', 'TweenMax'], function(dispatcher, s
 			var showSlide = function(slide, prevSlide) {
 				var width = slide.element.clientWidth;
 
+				dispatcher.dispatch({
+					type: 'slider-progressbar-reset',
+					id: item.id
+				});
+
 				item.z++;
 				slide.element.style.zIndex = item.z;
 
@@ -150,6 +155,12 @@ define(['dispatcher', 'slider/slider.store', 'TweenMax'], function(dispatcher, s
 
 			if (typeof isScrolling === 'undefined') {
 				isScrolling = !!(isScrolling || Math.abs(delta.x) < Math.abs(delta.y));
+				if (!isScrolling) {
+					dispatcher.dispatch({
+						type: 'slider-progressbar-stop',
+						id: item.id
+					});
+				}
 			}
 
 			if (isScrolling) return;
@@ -203,6 +214,11 @@ define(['dispatcher', 'slider/slider.store', 'TweenMax'], function(dispatcher, s
 		var ontouchend = function(e) {
 			var duration = +new Date - start.time;
 			var check = parseInt(duration) < 250 && Math.abs(delta.x) > 20 || Math.abs(delta.x) > width/3.5;
+
+			dispatcher.dispatch({
+				type: 'slider-progressbar-run',
+				id: item.id
+			});
 
 			if (isScrolling || nextIndex === false) return;
 
