@@ -935,7 +935,15 @@ section h2 {
 .masked-slider .slide.to-center .overlay {
 	opacity: 0;
 }
-
+.masked-slider .slide.moving .overlay {
+	opacity: 0;
+}
+.masked-slider .slide.lower-moving .overlay {
+	opacity: 0.3;
+}
+.masked-slider .slide.lower-moving .text {
+	opacity: 0.5;
+}
 
 .home .slider-arrow {
 	position: absolute;
@@ -967,7 +975,7 @@ section h2 {
 }
 .slider-arrow svg {
 	fill: #ffffff;
-	opacity: 0.6;
+	opacity: 0;
 }
 .slider-arrow.prev svg {
 	left: 20px;
@@ -982,7 +990,10 @@ section h2 {
 .slider-arrow svg {
 	transition: all 0.3s;
 }
-.slider-arrow:hover svg {
+.slider-outer:hover .slider-arrow svg {
+	opacity: 0.5;
+}
+.slider-outer:hover .slider-arrow:hover svg {
 	opacity: 1;
 }
 .slider-arrow.prev:hover svg {
