@@ -162,7 +162,6 @@ define([
 		shift = parseInt(shift);
 
 		offset = offset + shift;
-		console.log(offset);
 
 		if (!id) {
 			id = idName + idNum;

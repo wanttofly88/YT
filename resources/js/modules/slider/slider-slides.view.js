@@ -115,7 +115,7 @@ define(['dispatcher', 'slider/slider.store'], function(dispatcher, sliderStore) 
 		}
 
 
-		elements = document.getElementsByClassName('view-slider');
+		elements = document.getElementsByClassName('masked-slider');
 		for (var i = 0; i < elements.length; i++) {
 			check(items, elements[i]);
 		}

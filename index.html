@@ -55,120 +55,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="popup view-popup" data-id="production-popup">
-			<div class="popup-outer">
-				<div class="close view-popup-close show320">
-					<div class="bars">
-						<div class="b b1"></div>
-						<div class="b b2"></div>
-					</div>
-				</div>
-				<div class="popup-inner">
-					<div class="popup-cell">
-						<div class="wrapper">
-							<div class="close view-popup-close show640 show1000">
-								<div class="bars">
-									<div class="b b1"></div>
-									<div class="b b2"></div>
-								</div>
-							</div>
-							<div class="form-wrapper">
-								<div class="nm">Заказать продукцию</div>
-								<form action="#" class="view-form">
-									<div class="ln">
-										<label class="input-wrapper">
-											<span class="input-placeholder">Имя</span>
-											<input type="text" class="text" name="name">
-										</label>
-									</div>
-									<div class="ln">
-										<label class="input-wrapper">
-											<span class="input-placeholder">Телефон</span>
-											<input type="tel" class="text" name="name">
-										</label>
-									</div>
-									<div class="ln">
-										<label class="input-wrapper">
-											<span class="input-placeholder">Email</span>
-											<input type="tel" class="text" name="name">
-										</label>
-									</div>
-									<div class="ln">
-										<label class="input-wrapper">
-											<span class="input-placeholder">Адрес доставки</span>
-											<input type="tel" class="text" name="name">
-										</label>
-									</div>
-									<div class="ln submit-line">
-										<input type="submit" class="submit" value="отправить заказ">
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="popup view-popup" data-id="project-popup">
-			<div class="popup-outer">
-				<div class="close view-popup-close show320">
-					<div class="bars">
-						<div class="b b1"></div>
-						<div class="b b2"></div>
-					</div>
-				</div>
-				<div class="popup-inner">
-					<div class="popup-cell">
-						<div class="wrapper">
-							<div class="close view-popup-close show640 show1000">
-								<div class="bars">
-									<div class="b b1"></div>
-									<div class="b b2"></div>
-								</div>
-							</div>
-							<div class="form-wrapper">
-								<div class="nm">Заказать проект</div>
-								<form action="#" class="view-form">
-									<div class="ln">
-										<label class="input-wrapper">
-											<span class="input-placeholder">Имя</span>
-											<input type="text" class="text" name="name">
-										</label>
-									</div>
-									<div class="ln">
-										<label for="project-input" class="select-wrapper">
-											<span class="select-display" data-id="project-select">Кельн1</span>
-											<select class="select view-select" name="project" id="project-input" data-id="project-select">
-												<option value="Кельн1">Кельн</option>
-												<option value="Кельн2">Кельн</option>
-												<option value="Кельн3">Кельн</option>
-											</select>
-										</label>
-									</div>
-									<div class="ln">
-										<label class="input-wrapper">
-											<span class="input-placeholder">Email</span>
-											<input type="tel" class="text" name="name">
-										</label>
-									</div>
-									<div class="ln">
-										<label class="input-wrapper">
-											<span class="input-placeholder">Адрес доставки</span>
-											<input type="tel" class="text" name="name">
-										</label>
-									</div>
-									<div class="ln submit-line">
-										<input type="submit" class="submit" value="отправить заказ">
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
 
 		<div class="mobile-menu-overlay"></div>
 		<div class="mobile-menu">
@@ -262,14 +148,18 @@
 					</span>
 				</a>
 			</nav>
-			<a href="cart.html" class="cart">
-				<span>список покупок <span>(17)</span></span>
+			<a href="cart.html" class="cart bg-link bg-grey">
+				<span class="tx">
+					<span class="ico i-cart"></span>
+					список покупок (<span class="view-cart-number-total">17</span>)
+				</span>
 			</a>
-			<a href="tel:88000000000" class="phone">
-				<span>8 800 000 00 00</span>
-			</a>
-			<span class="callback view-popup-toggle" data-id="callback-popup">
-				<span>Заказать звонок</span>
+			<a href="tel:88000000000" class="phone">8 800 000 00 00</a>
+			<span class="callback view-popup-toggle  bg-link" data-id="callback-popup">
+				<span class="tx">
+					<span class="ico i-call"></span>
+					Заказать звонок
+				</span>
 			</span>
 		</header>
 		<main>
@@ -281,79 +171,85 @@
 			</div>
 			<section class="home dark">
 				<div class="slider-outer">
-					<div class="slider view-slider" data-id="main-slider" data-continuous="true">
-						<div class="swipe-wrap">
-							<div class="slide">
-								<div class="wrapper">
-									<div class="text">
-										<div class="nfo">
-											<h1>Акция «Ytong Pause»</h1>
-											<p>Мы продлили период регистрации на акцию до 01 марта 2016 года. Получите скидки и спец. условия на продукцию YTONG.</p>
-										</div>
-										<a href="action.html" class="ico-link">
-											<span class="arrow">
-												<span class="y">
-												</span>
-												<span class="b">
-												</span>
-											</span>
-											<span class="tx">
-												<span class="i">подробнее</span>
-												<span class="a">подробнее</span>
-											</span>
-										</a>
+					<div class="slider masked-slider" data-id="main-slider" data-continuous="true">
+						<div class="slide">
+							<div class="wrapper">
+								<div class="text">
+									<div class="nfo">
+										<h1>Акция «Ytong Pause»</h1>
+										<p>Мы продлили период регистрации на акцию до 01 марта 2016 года. Получите скидки и спец. условия на продукцию YTONG.</p>
 									</div>
+									<a href="action.html" class="ico-link">
+										<span class="arrow">
+											<span class="y">
+											</span>
+											<span class="b">
+											</span>
+										</span>
+										<span class="tx">
+											<span class="i">подробнее</span>
+											<span class="a">подробнее</span>
+										</span>
+									</a>
 								</div>
-								<div class="img" style="background-image:url(tmp/slider-img.jpg)"></div>
 							</div>
-							<div class="slide">
-								<div class="wrapper">
-									<div class="text">
-										<div class="nfo">
-											<h1>Акция «Ytong Pause»</h1>
-											<p>Мы продлили период регистрации на акцию до 01 марта 2016 года. Получите скидки и спец. условия на продукцию YTONG.</p>
-										</div>
-										<a href="action.html" class="ico-link">
-											<span class="arrow">
-												<span class="y">
-												</span>
-												<span class="b">
-												</span>
-											</span>
-											<span class="tx">
-												<span class="i">подробнее</span>
-												<span class="a">подробнее</span>
-											</span>
-										</a>
-									</div>
-								</div>
-								<div class="img" style="background-image:url(tmp/slider-img.jpg)"></div>
-							</div>
-							<div class="slide">
-								<div class="wrapper">
-									<div class="text">
-										<div class="nfo">
-											<h1>Акция «Ytong Pause»</h1>
-											<p>Мы продлили период регистрации на акцию до 01 марта 2016 года. Получите скидки и спец. условия на продукцию YTONG.</p>
-										</div>
-										<a href="action.html" class="ico-link">
-											<span class="arrow">
-												<span class="y">
-												</span>
-												<span class="b">
-												</span>
-											</span>
-											<span class="tx">
-												<span class="i">подробнее</span>
-												<span class="a">подробнее</span>
-											</span>
-										</a>
-									</div>
-								</div>
+							<div class="img-wrap">
+								<div class="overlay"></div>
 								<div class="img" style="background-image:url(tmp/slider-img.jpg)"></div>
 							</div>
 						</div>
-
+						<div class="slide">
+							<div class="wrapper">
+								<div class="text">
+									<div class="nfo">
+										<h1>«Ytong Pause» Акция</h1>
+										<p>Мы продлили период регистрации на акцию</p>
+									</div>
+									<a href="action.html" class="ico-link">
+										<span class="arrow">
+											<span class="y">
+											</span>
+											<span class="b">
+											</span>
+										</span>
+										<span class="tx">
+											<span class="i">подробнее</span>
+											<span class="a">подробнее</span>
+										</span>
+									</a>
+								</div>
+							</div>
+							<div class="img-wrap">
+								<div class="overlay"></div>
+								<div class="img" style="background-image:url(tmp/slider-img.jpg)"></div>
+							</div>
+						</div>
+						<div class="slide">
+							<div class="wrapper">
+								<div class="text">
+									<div class="nfo">
+										<h1>«Ytong Pause» Акция «Ytong Pause»</h1>
+										<p> Получите скидки и спец. условия на продукцию YTONG. Мы продлили период регистрации на акцию до 01 марта 2016 года. Получите скидки и спец. условия на продукцию YTONG.</p>
+									</div>
+									<a href="action.html" class="ico-link">
+										<span class="arrow">
+											<span class="y">
+											</span>
+											<span class="b">
+											</span>
+										</span>
+										<span class="tx">
+											<span class="i">подробнее</span>
+											<span class="a">подробнее</span>
+										</span>
+									</a>
+								</div>
+							</div>
+							<div class="img-wrap">
+								<div class="overlay"></div>
+								<div class="img" style="background-image:url(tmp/slider-img.jpg)"></div>
+							</div>
+						</div>
 					</div>
 
 					<div class="slider-arrow prev view-slider-arrow" data-sliders="main-slider" data-slide="prev">
@@ -374,39 +270,83 @@
 			</section>
 			<section class="production">
 				<div class="wrapper">
-					<h1>Продукция</h1>
+					<h1 class="triggerable scroll-trigger">Продукция</h1>
 					<div class="container cont-4">
-						<div class="item">
+						<div class="item catalog-appear triggerable scroll-trigger">
 							<a href="production.html#b1" class="inner">
 								<div class="img">
-									<img src="tmp/production-1.jpg" alt="">
+									<img src="resources/images/product-fake.png" alt="" class="img-fake">
+									<div class="img-hide">
+										<div class="img-zoom">
+											<img src="tmp/production-1.jpg" alt="" class="img-true">
+										</div>
+									</div>
 								</div>
-								<h6>Газобетонные блоки Ytong</h6>
+								<div class="text">
+									<div class="text-inner">
+										<h6>Газобетонные блоки Ytong</h6>
+										<div class="bg-w"></div>
+										<div class="bg-y"></div>
+									</div>
+								</div>
 							</a>
 						</div>
-						<div class="item">
+						<div class="item catalog-appear triggerable scroll-trigger">
 							<a href="production.html#b2" class="inner">
 								<div class="img">
-									<img src="tmp/production-2.jpg" alt="">
+									<img src="resources/images/product-fake.png" alt="" class="img-fake">
+									<div class="img-hide">
+										<div class="img-zoom">
+											<img src="tmp/production-2.jpg" alt="" class="img-true">
+										</div>
+									</div>
 								</div>
-								<h6>Перекрытия Ytong</h6>
+								<div class="text">
+									<div class="text-inner">
+										<h6>Перекрытия Ytong</h6>
+										<div class="bg-w"></div>
+										<div class="bg-y"></div>
+									</div>
+								</div>
 							</a>
 						</div>
 						<div class="clear show320"></div>
-						<div class="item">
+						<div class="item catalog-appear triggerable scroll-trigger">
 							<a href="production.html#b3" class="inner">
 								<div class="img">
-									<img src="tmp/production-3.jpg" alt="">
+									<img src="resources/images/product-fake.png" alt="" class="img-fake">
+									<div class="img-hide">
+										<div class="img-zoom">
+											<img src="tmp/production-3.jpg" alt="" class="img-true">
+										</div>
+									</div>
 								</div>
-								<h6>Утеплитель Multipor</h6>
+								<div class="text">
+									<div class="text-inner">
+										<h6>Утеплитель Multipor</h6>
+										<div class="bg-w"></div>
+										<div class="bg-y"></div>
+									</div>
+								</div>
 							</a>
 						</div>
-						<div class="item">
+						<div class="item catalog-appear triggerable scroll-trigger">
 							<a href="production.html#b4" class="inner">
 								<div class="img">
-									<img src="tmp/production-4.jpg" alt="">
+									<img src="resources/images/product-fake.png" alt="" class="img-fake">
+									<div class="img-hide">
+										<div class="img-zoom">
+											<img src="tmp/production-4.jpg" alt="" class="img-true">
+										</div>
+									</div>
 								</div>
-								<h6>Сопутствующие товары</h6>
+								<div class="text">
+									<div class="text-inner">
+										<h6>Сопутствующие товары</h6>
+										<div class="bg-w"></div>
+										<div class="bg-y"></div>
+									</div>
+								</div>
 							</a>
 						</div>
 						<div class="clear show320"></div>
@@ -430,62 +370,94 @@
 			</section>
 			<section class="projects">
 				<div class="wrapper">
-					<h1>Проекты</h1>
+					<h1 class="triggerable scroll-trigger">Проекты</h1>
 					<div class="container cont-2">
-						<div class="item triggerable scroll-trigger">
+						<div class="item catalog-appear triggerable scroll-trigger">
 							<a href="project.html" class="inner">
 								<div class="img">
 									<img src="resources/images/project-fake.png" alt="" class="img-fake">
 									<div class="img-hide">
-										<img src="tmp/projects-3.jpg" alt="" class="img-true">
+										<div class="img-zoom">
+											<img src="tmp/projects-3.jpg" alt="" class="img-true">
+										</div>
 									</div>
 								</div>
 								<div class="text">
-									<h6>Клаусдорф</h6>
-									<div class="nfo">Общая площадь — 108 м²</div>
+									<div class="text-inner">
+										<div class="nm">
+											<h6>Клаусдорф</h6>
+											<div class="bg-w"></div>
+											<div class="bg-y"></div>
+										</div>
+										<div class="nfo">Общая площадь — 108 м²</div>
+									</div>
 								</div>
 							</a>
 						</div>
-						<div class="item triggerable scroll-trigger">
+						<div class="item catalog-appear triggerable scroll-trigger">
 							<a href="project.html" class="inner">
 								<div class="img">
 									<img src="resources/images/project-fake.png" alt="" class="img-fake">
 									<div class="img-hide">
-										<img src="tmp/projects-4.jpg" alt="" class="img-true">
+										<div class="img-zoom">
+											<img src="tmp/projects-4.jpg" alt="" class="img-true">
+										</div>
 									</div>
 								</div>
 								<div class="text">
-									<h6>Штутгарт</h6>
-									<div class="nfo">Общая площадь — 97 м²</div>
+									<div class="text-inner">
+										<div class="nm">
+											<h6>Штутгарт</h6>
+											<div class="bg-w"></div>
+											<div class="bg-y"></div>
+										</div>
+										<div class="nfo">Общая площадь — 97 м²</div>
+									</div>
 								</div>
 							</a>
 						</div>
 						<div class="clear show640 show1000"></div>
-						<div class="item triggerable scroll-trigger">
+						<div class="item catalog-appear triggerable scroll-trigger">
 							<a href="project.html" class="inner">
 								<div class="img">
 									<img src="resources/images/project-fake.png" alt="" class="img-fake">
 									<div class="img-hide">
-										<img src="tmp/projects-1.jpg" alt="" class="img-true">
+										<div class="img-zoom">
+											<img src="tmp/projects-1.jpg" alt="" class="img-true">
+										</div>
 									</div>
 								</div>
 								<div class="text">
-									<h6>Кёлн</h6>
-									<div class="nfo">Общая площадь — 86 м² Общая площадь — 86 м² Общая площадь — 86 м² Общая площадь — 86 м² Общая площадь — 86 м²</div>
+									<div class="text-inner">
+										<div class="nm">
+											<h6>Кёлн</h6>
+											<div class="bg-w"></div>
+											<div class="bg-y"></div>
+										</div>
+										<div class="nfo">Общая площадь — 86 м² Общая площадь — 86 м² Общая площадь — 86 м² Общая площадь — 86 м² Общая площадь — 86 м²</div>
+									</div>
 								</div>
 							</a>
 						</div>
-						<div class="item triggerable scroll-trigger">
+						<div class="item catalog-appear triggerable scroll-trigger">
 							<a href="project.html" class="inner">
 							<div class="img">
 								<img src="resources/images/project-fake.png" alt="" class="img-fake">
 								<div class="img-hide">
-									<img src="tmp/projects-2.jpg" alt="" class="img-true">
+									<div class="img-zoom">
+										<img src="tmp/projects-2.jpg" alt="" class="img-true">
+									</div>
 								</div>
 							</div>
 							<div class="text">
-								<h6>Хайдельберг Хайдельберг Хайдельберг Хайдельберг Хайдельберг</h6>
-								<div class="nfo">Общая площадь — 127 м²</div>
+								<div class="text-inner">
+									<div class="nm">
+										<h6>Хайдельберг Хайдельберг Хайдельберг Хайдельберг Хайдельберг</h6>
+										<div class="bg-w"></div>
+										<div class="bg-y"></div>
+									</div>
+									<div class="nfo">Общая площадь — 127 м²</div>
+								</div>
 							</div>
 							</a>
 						</div>
@@ -517,9 +489,9 @@
 					<div class="l l4"></div>
 				</div>
 				<div class="wrapper">
-					<h2>Почему мы выбираем YTONG?</h2>
+					<h2 class="triggerable scroll-trigger">Почему мы выбираем YTONG?</h2>
 					<div class="container cont-2">
-						<div class="item">
+						<div class="item list-appear triggerable scroll-trigger">
 							<div class="ico i1"></div>
 							<div class="text">
 								<h4>Оперативность</h4>
@@ -528,7 +500,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="item">
+						<div class="item list-appear triggerable scroll-trigger">
 							<div class="ico i2"></div>
 							<div class="text">
 								<h4>Энергосбережение</h4>
@@ -538,7 +510,7 @@
 							</div>
 						</div>
 						<div class="clear show640 show1000"></div>
-						<div class="item">
+						<div class="item list-appear triggerable scroll-trigger">
 							<div class="ico i3"></div>
 							<div class="text">
 								<h4>Экономичность</h4>
@@ -547,7 +519,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="item">
+						<div class="item list-appear triggerable scroll-trigger">
 							<div class="ico i4"></div>
 							<div class="text">
 								<h4>Пожаробезопасность</h4>
@@ -557,7 +529,7 @@
 							</div>
 						</div>
 						<div class="clear show640 show1000"></div>
-						<div class="item">
+						<div class="item list-appear triggerable scroll-trigger">
 							<div class="ico i5"></div>
 							<div class="text">
 								<h4>Экологичность</h4>
@@ -566,7 +538,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="item">
+						<div class="item list-appear triggerable scroll-trigger">
 							<div class="ico i6"></div>
 							<div class="text">
 								<h4>Сервис</h4>

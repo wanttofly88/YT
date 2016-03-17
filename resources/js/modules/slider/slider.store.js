@@ -11,6 +11,7 @@ define(['dispatcher'], function(dispatcher) {
 				id: e.id,
 				total: e.total || 0,
 				index: e.index || 0,
+				blocked: false,
 				continuous: e.continuous || false
 			}
 		}
@@ -19,10 +20,20 @@ define(['dispatcher'], function(dispatcher) {
 			delete items[e.id];
 		}
 
+		if (e.type === 'slider-block') {
+			if (!items.hasOwnProperty(e.id)) return;
+			items[e.id].blocked = true;
+		}
+
+		if (e.type === 'slider-unblock') {
+			if (!items.hasOwnProperty(e.id)) return;
+			items[e.id].blocked = false;
+		}
 
 		if (e.type === 'slider-change-next') {
 
 			if (!items.hasOwnProperty(e.id)) return;
+			if (items[e.id].blocked) return;
 
 			items[e.id].index++;
 			if (items[e.id].continuous) {
@@ -36,6 +47,7 @@ define(['dispatcher'], function(dispatcher) {
 		if (e.type === 'slider-change-prev') {
 
 			if (!items.hasOwnProperty(e.id)) return;
+			if (items[e.id].blocked) return;
 
 			items[e.id].index--;
 			if (items[e.id].continuous) {
@@ -49,6 +61,7 @@ define(['dispatcher'], function(dispatcher) {
 		if (e.type === 'slider-change-to') {
 
 			if (!items.hasOwnProperty(e.id)) return;
+			if (items[e.id].blocked) return;
 
 			if (items[e.id].index !== e.index) {
 				if (e.index > (items[e.id].total || e.index < 0)) {

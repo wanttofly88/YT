@@ -30,7 +30,7 @@ require([
 	'menu/mobile-menu.view',
 	'menu/mobile-menu-btn.view',
 	'menu/mobile-menu-drag.view',
-	'slider/slider.view',
+	'slider/slider-masked.view',
 	'slider/slider-arrows.view',
 	'slider/slider-slides.view',
 	'preload/preload.view',

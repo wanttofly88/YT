@@ -7,7 +7,6 @@ define(['dispatcher', 'cart/cart.store'], function(dispatcher, store) {
 	var idName = 'cart-id-';
 	var idNum  = 1;
 
-
 	var _handleChange = function() {
 		var storeData = store.getData();
 
