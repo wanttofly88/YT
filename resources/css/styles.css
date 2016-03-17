@@ -936,7 +936,7 @@ section h2 {
 	opacity: 0;
 }
 .masked-slider .slide.moving .overlay {
-	opacity: 0;
+	opacity: 0.2;
 }
 .masked-slider .slide.lower-moving .overlay {
 	opacity: 0.3;

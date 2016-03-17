@@ -124,6 +124,7 @@ define(['dispatcher', 'slider/slider.store', 'TweenMax'], function(dispatcher, s
 			}
 
 			isScrolling = undefined;
+			zSet = false;
 
 			delta = {};
 
@@ -164,7 +165,7 @@ define(['dispatcher', 'slider/slider.store', 'TweenMax'], function(dispatcher, s
 			if (nextIndex !== false && tmpNextIndex !== nextIndex) {
 				item.slides[nextIndex].element.style.zIndex = item.z - 2;
 				item.slides[nextIndex].element.classList.remove('moving');
-				item.slides[item.index].element.classList.add('lower-moving');
+				item.slides[item.index].element.classList.remove('lower-moving');
 				zSet = false;
 			}
 			nextIndex = tmpNextIndex;
@@ -213,7 +214,10 @@ define(['dispatcher', 'slider/slider.store', 'TweenMax'], function(dispatcher, s
 				});
 			} else {
 				_translate(item.slides[nextIndex].imgWrap, shift, 300);
-				_translate(item.slides[nextIndex].img, -shift/2, 0);
+				_translate(item.slides[nextIndex].img, -shift/2, 300);
+				item.slides[nextIndex].element.classList.remove('moving');
+				item.slides[item.index].element.classList.remove('lower-moving');
+				zSet = false;
 			}
 		}
 
