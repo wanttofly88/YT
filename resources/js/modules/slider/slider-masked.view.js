@@ -151,6 +151,8 @@ define(['dispatcher', 'slider/slider.store', 'TweenMax'], function(dispatcher, s
 				isScrolling = !!(isScrolling || Math.abs(delta.x) < Math.abs(delta.y));
 			}
 
+			if (isScrolling) return;
+
 			if (delta.x < 0) {
 				tmpNextIndex = item.index + 1;
 				if (tmpNextIndex > item.total) tmpNextIndex = 0;
