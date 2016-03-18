@@ -612,18 +612,6 @@ p a:hover {
 .dark .ico-link {
 	color: #ffffff;
 }
-.ico-link .arrow {
-	position: absolute;
-	left: 0;
-	top: 2px;
-	width: 20px;
-	height: 10px;
-	overflow: hidden;
-}
-.ico-link.a-d .arrow {
-	transform: rotate(90deg);
-	width: 12px;
-}
 .ico-link .tx {
 	display: inline-block;
 	position: relative;
@@ -643,76 +631,6 @@ p a:hover {
 .ico-link .tx span {
 	white-space: nowrap;
 }
-.ico-link .arrow .y,
-.ico-link .arrow .b {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	will-change: transform;
-}
-.ico-link .arrow .y:before,
-.ico-link .arrow .b:before {
-	content: "";
-	position: absolute;
-	width: 30px;
-	height: 2px;
-	top: 4px;
-	right: 2px;
-	background: #fdb813;
-}
-.ico-link.a-l .arrow .y:before,
-.ico-link.a-l .arrow .b:before {
-	left: 2px;
-	right: auto;
-}
-.ico-link .arrow .b:before {
-	background: #0c0c0c;
-}
-.ico-link .arrow .y:after,
-.ico-link .arrow .b:after {
-	content: "";
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 7px;
-	height: 10px;
-	background: url(../images/arr-end-right-yellow.svg);
-	background-size: 100%;
-}
-.ico-link.a-l .arrow .y:after,
-.ico-link.a-l .arrow .b:after {
-	left: 0;
-	right: auto;
-	background: url(../images/arr-end-left-yellow.svg);
-	background-size: 100%;
-}
-.ico-link .arrow .b:after {
-	background: url(../images/arr-end-right-black.svg);
-	background-size: 100%;
-}
-.ico-link.a-l .arrow .b:after {
-	background: url(../images/arr-end-left-black.svg);
-	background-size: 100%;
-}
-.ico-link .arrow .y,
-.ico-link .arrow .b {
-	transition: transform 0.3s;
-}
-.ico-link:hover .arrow .y,
-.ico-link:hover .arrow .b {
-	transition: transform 0.5s;
-}
-.ico-link .arrow .b {
-	transform: translateX(-50px);
-}
-.ico-link:hover .arrow .b {
-	transform: translateX(0px);
-}
-.ico-link:hover .arrow .y {
-	transform: translateX(50px);
-}
 .ico-link .tx .a {
 	width: 0;
 	transition: width 0.3s;
@@ -724,13 +642,49 @@ p a:hover {
 .home .ico-link:hover .tx .a {
 	width: 0%;
 }
-.dark .ico-link .arrow .b:before {
-	background: #ffffff;
+.ico-link .arrow {
+	position: absolute;
+	left: 0;
+	top: 1px;
+	width: 22px;
+	height: 11px;
+	overflow: hidden;
+	transform: translateZ(0px);
 }
-.dark .ico-link .arrow .b:after {
-	background: url(../images/arr-end-right-white.svg);
+.ico-link.a-d .arrow {
+	transform: rotate(90deg) translateZ(0px);
+	width: 12px;
+}
+.ico-link .arrow:before,
+.ico-link .arrow:after {
+	content: "";
+	position: absolute;
+	width: 22px;
+	height: 11px;
+	left: 0;
+	top: 0;
+	transition: transform 0.3s;
+}
+.ico-link .arrow:before {
+	background: url(../images/right-yellow.svg) no-repeat;
 	background-size: 100%;
 }
+.ico-link .arrow:after {
+	transform: translateX(-60px);
+	background: url(../images/right.svg) no-repeat;
+	background-size: 100%;
+}
+.dark .ico-link .arrow:after {
+	background: url(../images/right-white.svg) no-repeat;
+	background-size: 100%;
+}
+.ico-link:hover .arrow:before {
+	transform: translateX(60px);
+}
+.ico-link:hover .arrow:after {
+	transform: translateX(0px);
+}
+
 .clear {
 	clear: both;
 }
@@ -1231,8 +1185,15 @@ section h2 {
 .actions {
 	padding-top: 30px
 }
-.actions h5 {
+.actions .nm {
+	position: relative;
+}
+.actions h6 {
 	margin-bottom: 10px;
+}
+.actions h6 {
+	position: relative;
+	z-index: 1;
 }
 .actions .nfo {
 	font-size: 16px;
