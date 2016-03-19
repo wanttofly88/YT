@@ -34,6 +34,7 @@ require([
 	'slider/slider-arrows.view',
 	'slider/slider-slides.view',
 	'slider/slider-progressbar.view',
+	'slider/slider-controls.view',
 	'preload/preload.view',
 	'trigger/trigger.view',
 	'trigger/scroll-trigger.view',
@@ -68,6 +69,7 @@ require([
 		sliderArrows,
 		sliderSlides,
 		sliderProgressbar,
+		sliderControls,
 		preload,
 		trigger,
 		scrollTrigger,
@@ -102,6 +104,7 @@ require([
 		sliderArrows.init();
 		sliderSlides.init();
 		sliderProgressbar.init();
+		sliderControls.init();
 		preload.init();
 		trigger.init();
 		scrollTrigger.init();

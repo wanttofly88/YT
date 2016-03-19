@@ -6,7 +6,7 @@ define(['dispatcher', 'drop-down/drop-down.store', 'resize/resize.store', 'resiz
 
 	var idName = 'drop-down-id-';
 	var breakpointName = 'desktop';
-	var animationDelay = 300;
+	var animationDelay = 600;
 	var to;
 	var idNum  = 1;
 
@@ -25,7 +25,6 @@ define(['dispatcher', 'drop-down/drop-down.store', 'resize/resize.store', 'resiz
 			if (!item.active) {
 				_hide(item);
 			}
-
 			if (item.active) {
 				_show(item);
 			}
@@ -36,30 +35,43 @@ define(['dispatcher', 'drop-down/drop-down.store', 'resize/resize.store', 'resiz
 		}
 	}
 
+	var _transition = function(element, height, speed) {
+		element.style.webkitTransitionDuration =
+		element.style.MozTransitionDuration =
+		element.style.msTransitionDuration =
+		element.style.OTransitionDuration =
+		element.style.transitionDuration = speed + 'ms';
+		element.style.height = height + 'px';
+	}
+ 
 	var _show = function(item) {
-		item.element.classList.add('active');
-		item.element.style.height = (item.inner.clientHeight) + 'px';
+		var h = item.heights[bpName] || 0;
+		var bpName = bpStore.getData().breakpoint.name;
+		if (item.inner.clientHeight <= h) h = item.inner.clientHeight;
 
-		clearTimeout(to);
-		to = setTimeout(function() {
-			item.element.style.height = 'auto';
-		}, animationDelay);
+		item.element.classList.add('active');
+		_transition(item.element, h, 0);
+		setTimeout(function() {
+			_transition(item.element, item.inner.clientHeight, animationDelay);
+			clearTimeout(to);
+			to = setTimeout(function() {
+				item.element.style.height = 'auto';
+			}, animationDelay + 20);
+		}, 20);
 	}
 
 	var _hide = function(item) {
 		var bpName = bpStore.getData().breakpoint.name;
-		var h;
+		var h = item.heights[bpName] || 0;
 
 		if (item.element.clientHeight === 0) return;
 
-		h = item.heights[bpName] || 0;
 		if (item.inner.clientHeight <= h) h = item.inner.clientHeight;
 
 		item.element.classList.remove('active');
-		item.element.style.height = (item.inner.clientHeight) + 'px';
-
+		_transition(item.element, item.inner.clientHeight, 0);
 		setTimeout(function() {
-			item.element.style.height = h + 'px';
+			_transition(item.element, h, animationDelay);
 		}, 20);
 	}
 
@@ -94,11 +106,9 @@ define(['dispatcher', 'drop-down/drop-down.store', 'resize/resize.store', 'resiz
 
 			if (item.enabled) {
 				if (item.active) {
-					_show(item);
-					//item.element.style.height = (item.inner.clientHeight) + 'px';
+					
 				} else {
-					_hide(item);
-					//item.element.style.height = item.heights[bpName] + 'px';
+					_transition(item.element, h, 0);
 				}
 			}
 
@@ -118,8 +128,6 @@ define(['dispatcher', 'drop-down/drop-down.store', 'resize/resize.store', 'resiz
 		if (!id) {
 			id = idName + idNum;
 			idNum++;
-
-			//setAttribute('data-id', id);
 		}
 
 		heights.mobile  = element.getAttribute('data-height-mobile')  || 9999999;

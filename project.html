@@ -55,60 +55,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="popup view-popup" data-id="production-popup">
-			<div class="popup-outer">
-				<div class="close view-popup-close show320">
-					<div class="bars">
-						<div class="b b1"></div>
-						<div class="b b2"></div>
-					</div>
-				</div>
-				<div class="popup-inner">
-					<div class="popup-cell">
-						<div class="wrapper">
-							<div class="close view-popup-close show640 show1000">
-								<div class="bars">
-									<div class="b b1"></div>
-									<div class="b b2"></div>
-								</div>
-							</div>
-							<div class="form-wrapper">
-								<div class="nm">Заказать продукцию</div>
-								<form action="#" class="view-form">
-									<div class="ln">
-										<label class="input-wrapper">
-											<span class="input-placeholder">Имя</span>
-											<input type="text" class="text" name="name">
-										</label>
-									</div>
-									<div class="ln">
-										<label class="input-wrapper">
-											<span class="input-placeholder">Телефон</span>
-											<input type="tel" class="text" name="name">
-										</label>
-									</div>
-									<div class="ln">
-										<label class="input-wrapper">
-											<span class="input-placeholder">Email</span>
-											<input type="tel" class="text" name="name">
-										</label>
-									</div>
-									<div class="ln">
-										<label class="input-wrapper">
-											<span class="input-placeholder">Адрес доставки</span>
-											<input type="tel" class="text" name="name">
-										</label>
-									</div>
-									<div class="ln submit-line">
-										<input type="submit" class="submit" value="отправить заказ">
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 		<div class="popup view-popup" data-id="project-popup">
 			<div class="popup-outer">
 				<div class="close view-popup-close show320">
@@ -272,25 +218,35 @@
 				<div class="l l4"></div>
 			</div>
 			
-			<section class="project-slider">
-				<div class="slider view-slider">
-					<div class="swipe-wrap">
-						<div class="slide">
-							<img src="tmp/project.jpg" alt="">
+			<section class="project-slider slider-outer">
+				<div class="slider masked-slider" data-id="project-slider">
+					<div class="slide">
+						<div class="img-wrap">
+							<div class="overlay"></div>
+							<div class="img" style="background-image:url(tmp/project.jpg)"></div>
 						</div>
-						<div class="slide">
-							<img src="tmp/project.jpg" alt="">
+					</div>
+					<div class="slide">
+						<div class="img-wrap">
+							<div class="overlay"></div>
+							<div class="img" style="background-image:url(tmp/project.jpg)"></div>
 						</div>
-						<div class="slide">
-							<img src="tmp/project.jpg" alt="">
+					</div>
+					<div class="slide">
+						<div class="img-wrap">
+							<div class="overlay"></div>
+							<div class="img" style="background-image:url(tmp/project.jpg)"></div>
 						</div>
 					</div>
 				</div>
 				<div class="slider-controls">
-					<div class="item"></div>
-					<div class="item"></div>
-					<div class="item"></div>
+					<div class="slider-controls-inner">
+						<div class="item view-slider-control" data-slide="0" data-sliders="project-slider"></div>
+						<div class="item view-slider-control" data-slide="1" data-sliders="project-slider"></div>
+						<div class="item view-slider-control" data-slide="2" data-sliders="project-slider"></div>
+					</div>
 				</div>
+
 			</section>
 
 			<article class="project narrow">
@@ -393,31 +349,47 @@
 				<div class="wrapper">
 					<h2>Другие проекты</h2>
 					<div class="container cont-2">
-						<div class="item triggerable scroll-trigger">
+						<div class="item catalog-appear triggerable scroll-trigger">
 							<a href="project.html" class="inner">
 								<div class="img">
 									<img src="resources/images/project-fake.png" alt="" class="img-fake">
 									<div class="img-hide">
-										<img src="tmp/projects-3.jpg" alt="" class="img-true">
+										<div class="img-zoom">
+											<img src="tmp/projects-3.jpg" alt="" class="img-true">
+										</div>
 									</div>
 								</div>
 								<div class="text">
-									<h6>Клаусдорф</h6>
-									<div class="nfo">Общая площадь — 108 м²</div>
+									<div class="text-inner">
+										<div class="nm">
+											<h6>Клаусдорф</h6>
+											<div class="bg-w"></div>
+											<div class="bg-y"></div>
+										</div>
+										<div class="nfo">Общая площадь — 108 м²</div>
+									</div>
 								</div>
 							</a>
 						</div>
-						<div class="item triggerable scroll-trigger">
+						<div class="item catalog-appear triggerable scroll-trigger">
 							<a href="project.html" class="inner">
 								<div class="img">
 									<img src="resources/images/project-fake.png" alt="" class="img-fake">
 									<div class="img-hide">
-										<img src="tmp/projects-4.jpg" alt="" class="img-true">
+										<div class="img-zoom">
+											<img src="tmp/projects-4.jpg" alt="" class="img-true">
+										</div>
 									</div>
 								</div>
 								<div class="text">
-									<h6>Штутгарт</h6>
-									<div class="nfo">Общая площадь — 97 м²</div>
+									<div class="text-inner">
+										<div class="nm">
+											<h6>Штутгарт</h6>
+											<div class="bg-w"></div>
+											<div class="bg-y"></div>
+										</div>
+										<div class="nfo">Общая площадь — 97 м²</div>
+									</div>
 								</div>
 							</a>
 						</div>
