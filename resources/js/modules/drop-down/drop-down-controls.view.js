@@ -20,8 +20,16 @@ define(['dispatcher', 'drop-down/drop-down.store'], function(dispatcher, store) 
 
 			if (item.active) {
 				item.element.classList.add('active');
+				if (item.iEl && item.aEl) {
+					item.iEl.innerHTML = 'свернуть';
+					item.aEl.innerHTML = 'свернуть';
+				}
 			} else {
 				item.element.classList.remove('active');
+				if (item.iEl && item.aEl) {
+					item.iEl.innerHTML = item.defaultText;
+					item.aEl.innerHTML = item.defaultText;
+				}
 			}
 
 			if (storeData.items[id].disabled) {
@@ -41,12 +49,21 @@ define(['dispatcher', 'drop-down/drop-down.store'], function(dispatcher, store) 
 	var _add = function(items, element) {
 		var id = element.getAttribute('data-id');
 		var active = element.classList.contains('active');
+		var iEl = element.getElementsByClassName('i')[0];
+		var aEl = element.getElementsByClassName('a')[0];
+		var defaultText;
+
+		console.log(element);
 
 		if (!id) {
 			id = idName + idNum;
 			idNum++;
 
 			//setAttribute('data-id', id);
+		}
+
+		if (iEl) {
+			defaultText = iEl.innerHTML;
 		}
 
 		element.addEventListener('click', function() {
@@ -61,7 +78,10 @@ define(['dispatcher', 'drop-down/drop-down.store'], function(dispatcher, store) 
 		items[id] = {
 			id: id,
 			element: element,
-			active: active
+			active: active,
+			defaultText: defaultText,
+			iEl: iEl,
+			aEl: aEl
 		}
 	}
 

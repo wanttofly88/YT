@@ -5,6 +5,7 @@
 	<title>ytong</title>
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, minimal-ui"/>
 	<meta name="resources-path" content="resources">
+	<meta name="msapplication-tap-highlight" content="no">
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="resources/css/styles.css">
 	<script src="resources/js/libs/modernizr.js"></script>
@@ -53,6 +54,18 @@
 						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+
+		<div class="popup view-popup video-popup" data-id="video-popup">
+			<div class="close view-popup-close corner">
+				<div class="bars">
+					<div class="b b1"></div>
+					<div class="b b2"></div>
+				</div>
+			</div>
+			<div class="iframe-wrapper">
+				<iframe id="videoPlayer" width="560" height="315" src="https://www.youtube.com/embed/gYBqrFnF2IU?enablejsapi=1&amp;version=3&amp;playerapiid=ytplayer&amp;showinfo=0&amp;rel=0&amp;vq=hd720" frameborder="0" allowfullscreen></iframe>
 			</div>
 		</div>
 
@@ -154,12 +167,15 @@
 					список покупок (<span class="view-cart-number-total">17</span>)
 				</span>
 			</a>
-			<a href="tel:88000000000" class="phone">8 800 000 00 00</a>
-			<span class="callback view-popup-toggle  bg-link" data-id="callback-popup">
-				<span class="tx">
-					<span class="ico i-call"></span>
-					Заказать звонок
-				</span>
+			<a href="tel:+74952015118" class="phone">+7 495 201-51-18</a>
+			<span class="callback view-popup-toggle" data-id="callback-popup">
+				<span class="ico-link call">
+					<span class="ico"></span>
+					<span class="tx">
+						<span class="i">заказать звонок</span>
+						<span class="a">заказать звонок</span>
+					</span>
+				</a>
 			</span>
 		</header>
 		<main>
@@ -176,14 +192,13 @@
 							<div class="wrapper">
 								<div class="text">
 									<div class="nfo">
-										<h1>Акция «Ytong Pause»</h1>
+										<h2>Акция «Ytong Pause»</h2>
 										<p>Мы продлили период регистрации на акцию до 01 марта 2016 года. Получите скидки и спец. условия на продукцию YTONG.</p>
 									</div>
 									<a href="action.html" class="ico-link">
 										<span class="arrow"></span>
 										<span class="tx">
 											<span class="i">подробнее</span>
-											<span class="a">подробнее</span>
 										</span>
 									</a>
 								</div>
@@ -197,14 +212,13 @@
 							<div class="wrapper">
 								<div class="text">
 									<div class="nfo">
-										<h1>«Ytong Pause» Акция</h1>
+										<h2>«Ytong Pause» Акция</h2>
 										<p>Мы продлили период регистрации на акцию</p>
 									</div>
 									<a href="action.html" class="ico-link">
 										<span class="arrow"></span>
 										<span class="tx">
 											<span class="i">подробнее</span>
-											<span class="a">подробнее</span>
 										</span>
 									</a>
 								</div>
@@ -218,22 +232,29 @@
 							<div class="wrapper">
 								<div class="text">
 									<div class="nfo">
-										<h1>«Ytong Pause» Акция «Ytong Pause»</h1>
+										<h2>«Ytong Pause» Акция «Ytong Pause»</h2>
 										<p> Получите скидки и спец. условия на продукцию YTONG. Мы продлили период регистрации на акцию до 01 марта 2016 года.</p>
 									</div>
-									<a href="action.html" class="ico-link">
+									<span class="ico-link view-popup-toggle" data-id="video-popup">
 										<span class="arrow"></span>
 										<span class="tx">
-											<span class="i">подробнее</span>
-											<span class="a">подробнее</span>
+											<span class="i">видео</span>
 										</span>
-									</a>
+									</span>
 								</div>
 							</div>
 							<div class="img-wrap">
 								<div class="overlay"></div>
 								<div class="img" style="background-image:url(tmp/slider-img.jpg)"></div>
 							</div>
+						</div>
+					</div>
+
+					<div class="slider-controls">
+						<div class="slider-controls-inner">
+							<div class="item view-slider-control" data-slide="0" data-sliders="main-slider"></div>
+							<div class="item view-slider-control" data-slide="1" data-sliders="main-slider"></div>
+							<div class="item view-slider-control" data-slide="2" data-sliders="main-slider"></div>
 						</div>
 					</div>
 
@@ -369,7 +390,8 @@
 											<div class="bg-w"></div>
 											<div class="bg-y"></div>
 										</div>
-										<div class="nfo">Общая площадь — 108 м²</div>
+										<div class="price">4 605 000 Р</div>
+										<div class="nfo">Общая площадь: 108 м²</div>
 									</div>
 								</div>
 							</a>
@@ -391,7 +413,8 @@
 											<div class="bg-w"></div>
 											<div class="bg-y"></div>
 										</div>
-										<div class="nfo">Общая площадь — 97 м²</div>
+										<div class="price">4 605 000 Р</div>
+										<div class="nfo">Общая площадь: 97 м²</div>
 									</div>
 								</div>
 							</a>
@@ -414,7 +437,8 @@
 											<div class="bg-w"></div>
 											<div class="bg-y"></div>
 										</div>
-										<div class="nfo">Общая площадь — 86 м² Общая площадь — 86 м² Общая площадь — 86 м² Общая площадь — 86 м² Общая площадь — 86 м²</div>
+										<div class="price">4 605 000 Р</div>
+										<div class="nfo">Общая площадь: 86 м² Общая площадь: 86 м² Общая площадь: 86 м² Общая площадь: 86 м² Общая площадь: 86 м²</div>
 									</div>
 								</div>
 							</a>
@@ -436,6 +460,7 @@
 										<div class="bg-w"></div>
 										<div class="bg-y"></div>
 									</div>
+									<div class="price">4 605 000 Р</div>
 									<div class="nfo">Общая площадь — 127 м²</div>
 								</div>
 							</div>

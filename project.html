@@ -114,6 +114,54 @@
 			</div>
 		</div>
 
+		<div class="popup view-popup slider-popup" data-id="slider-popup">
+			<div class="close view-popup-close corner">
+				<div class="bars">
+					<div class="b b1"></div>
+					<div class="b b2"></div>
+				</div>
+			</div>
+			<div class="slider-outer project-slider">
+				<div class="slider masked-slider" data-id="popup-slider" data-continuous="true">
+					<div class="slide">
+						<div class="img-wrap">
+							<div class="overlay"></div>
+							<div class="img" style="background-image:url(tmp/project.jpg)"></div>
+						</div>
+					</div>
+					<div class="slide">
+						<div class="img-wrap">
+							<div class="overlay"></div>
+							<div class="img" style="background-image:url(tmp/project.jpg)"></div>
+						</div>
+					</div>
+					<div class="slide">
+						<div class="img-wrap">
+							<div class="overlay"></div>
+							<div class="img" style="background-image:url(tmp/project.jpg)"></div>
+						</div>
+					</div>
+				</div>
+				<div class="slider-arrow prev view-slider-arrow" data-sliders="popup-slider" data-slide="prev">
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 625 952.4" xml:space="preserve">
+						<polygon points="476.2,952.4 625,803.6 297.6,476.2 625,148.8 476.2,0 0,476.2 "/>
+					</svg>
+				</div>
+				<div class="slider-arrow next view-slider-arrow" data-sliders="popup-slider" data-slide="next">
+					<svg version="1.1" id="_x3C_Layer_x3E_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 625 952.4" style="enable-background:new 0 0 625 952.4;" xml:space="preserve">
+						<polygon points="148.8,952.4 0,803.6 327.4,476.2 0,148.8 148.8,0 625,476.2 "/>
+					</svg>
+				</div>
+				<div class="slider-controls">
+					<div class="slider-controls-inner">
+						<div class="item view-slider-control" data-slide="0" data-sliders="popup-slider"></div>
+						<div class="item view-slider-control" data-slide="1" data-sliders="popup-slider"></div>
+						<div class="item view-slider-control" data-slide="2" data-sliders="popup-slider"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="mobile-menu-overlay"></div>
 		<div class="mobile-menu">
 			<div class="nav-inner">
@@ -200,14 +248,21 @@
 					</span>
 				</a>
 			</nav>
-			<a href="cart.html" class="cart">
-				<span>список покупок <span>(17)</span></span>
+			<a href="cart.html" class="cart bg-link bg-grey">
+				<span class="tx">
+					<span class="ico i-cart"></span>
+					список покупок (<span class="view-cart-number-total">17</span>)
+				</span>
 			</a>
-			<a href="tel:88000000000" class="phone">
-				<span>8 800 000 00 00</span>
-			</a>
+			<a href="tel:88000000000" class="phone">8 800 000 00 00</a>
 			<span class="callback view-popup-toggle" data-id="callback-popup">
-				<span>Заказать звонок</span>
+				<span class="ico-link call">
+					<span class="ico"></span>
+					<span class="tx">
+						<span class="i">заказать звонок</span>
+						<span class="a">заказать звонок</span>
+					</span>
+				</a>
 			</span>
 		</header>
 		<main>
@@ -298,33 +353,48 @@
 				<div class="wrapper">
 					<div class="container cont-4">
 						<div class="item">
-							<div class="inner">
+							<div class="inner view-popup-toggle view-slider-control" 
+								data-slide="0" 
+								data-sliders="popup-slider" 
+								data-id="slider-popup">
 								<div class="overlay"></div>
 								<img src="tmp/plan-1.jpg" alt="">
 							</div>
 						</div>
 						<div class="item">
-							<div class="inner">
+							<div class="inner view-popup-toggle view-slider-control"
+								data-slide="1" 
+								data-sliders="popup-slider" 
+								data-id="slider-popup">
 								<div class="overlay"></div>
 								<img src="tmp/plan-2.jpg" alt="">
 							</div>
 						</div>
 						<div class="clear show320"></div>
 						<div class="item">
-							<div class="inner">
+							<div class="inner view-popup-toggle view-slider-control"
+								data-slide="2" 
+								data-sliders="popup-slider" 
+								data-id="slider-popup">
 								<div class="overlay"></div>
 								<img src="tmp/plan-3.jpg" alt="">
 							</div>
 						</div>
 						<div class="item">
-							<div class="inner">
+							<div class="inner view-popup-toggle view-slider-control"
+								data-slide="0" 
+								data-sliders="popup-slider" 
+								data-id="slider-popup">
 								<div class="overlay"></div>
 								<img src="tmp/plan-1.jpg" alt="">
 							</div>
 						</div>
 						<div class="clear"></div>
 						<div class="item">
-							<div class="inner">
+							<div class="inner view-popup-toggle view-slider-control"
+								data-slide="1" 
+								data-sliders="popup-slider" 
+								data-id="slider-popup">
 								<div class="overlay"></div>
 								<img src="tmp/plan-2.jpg" alt="">
 							</div>

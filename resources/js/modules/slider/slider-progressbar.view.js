@@ -49,7 +49,6 @@ define(['dispatcher', 'resize/resize.store', 'slider/slider.store'], function(di
 		var _loop = function() {
 			if (!item.stopped) {
 				item.time += 1000/60;
-				console.log(item.time);
 				if (item.time >= item.delay) {
 					item.time = 0;
 					dispatcher.dispatch({

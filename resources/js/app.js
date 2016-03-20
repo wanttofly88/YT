@@ -57,7 +57,8 @@ require([
 	'drop-down/drop-down-contacts.view',
 	'map/map.view',
 	'map/map-markers.view',
-	'map/map-controls.view'
+	'map/map-controls.view',
+	'video/video-main.view'
 	], function(
 		domReady,
 		vhUnits,
@@ -92,7 +93,8 @@ require([
 		dropDownContacts,
 		map,
 		mapMarkers,
-		mapControls
+		mapControls,
+		videoMain
 	) {
 	domReady(function () {
 		vhUnits.init();
@@ -128,5 +130,6 @@ require([
 		map.init();
 		mapMarkers.init();
 		mapControls.init();
+		videoMain.init();
 	});
 });
