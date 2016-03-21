@@ -31,9 +31,9 @@ define(['dispatcher', 'popup/popup.store', 'touch/touch.store'], function(dispat
 
 	var _disable = function() {
 		if (!player) return;
-		if (!isTouchDevice) {
+		// if (!isTouchDevice) {
 			player.pauseVideo();
-		}
+		// }
 	}
 
 	var _onPlayerReady = function() {
