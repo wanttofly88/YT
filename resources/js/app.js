@@ -52,6 +52,7 @@ require([
 	'cart/cart-price-total.view',
 	'cart/cart-remove-all.view',
 	'cart/cart-number-total.view',
+	'cart/cart-add.view',
 	'drop-down/drop-down.view',
 	'drop-down/drop-down-controls.view',
 	'drop-down/drop-down-contacts.view',
@@ -88,6 +89,7 @@ require([
 		cartPriceTotal,
 		cartRemoveAll,
 		cartNumberTotal,
+		cartAdd,
 		dropDown,
 		dropDownControls,
 		dropDownContacts,
@@ -124,6 +126,7 @@ require([
 		cartPriceTotal.init();
 		cartRemoveAll.init();
 		cartNumberTotal.init();
+		cartAdd.init();
 		dropDown.init();
 		dropDownControls.init();
 		dropDownContacts.init();

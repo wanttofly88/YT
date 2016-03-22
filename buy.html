@@ -197,9 +197,12 @@
 								<span class="a">Сервисы</span>
 							</span>
 						</a>
-						<span class="item active">
-							<span>Как купить</span>
-						</span>
+						<a class="item" href="buy.html">
+							<span class="masked-link">
+								<span class="i">Как купить</span>
+								<span class="a">Как купить</span>
+							</span>
+						</a>
 						<a class="item" href="contacts.html">
 							<span class="masked-link">
 								<span class="i">Контакты</span>
@@ -207,6 +210,16 @@
 							</span>
 						</a>
 					</nav>
+					<a href="tel:+74952015118" class="phone">+7 495 201-51-18</a>
+					<span class="callback view-popup-toggle" data-id="callback-popup">
+						<span class="ico-link call">
+							<span class="ico"></span>
+							<span class="tx">
+								<span class="i">заказать звонок</span>
+								<span class="a">заказать звонок</span>
+							</span>
+						</a>
+					</span>
 				</div>
 			</div>
 		</div>
@@ -257,7 +270,9 @@
 			<a href="cart.html" class="cart bg-link bg-grey">
 				<span class="tx">
 					<span class="ico i-cart"></span>
-					список покупок (<span class="view-cart-number-total">17</span>)
+					<span class="show1000">список покупок (</span><!--
+				 --><span class="view-cart-number-total">17</span><!--
+				 --><span class="show1000">)</span>
 				</span>
 			</a>
 			<a href="tel:88000000000" class="phone">8 800 000 00 00</a>
@@ -279,8 +294,8 @@
 				<div class="l l4"></div>
 			</div>
 
-			<section class="buy narrow">
-				<div class="wrapper">
+			<section class="buy narrow triggerable">
+				<div class="wrapper triggerable scroll-trigger appear-up">
 					<h1>Способы оплаты</h1>
 					<h3>Для физических лич</h3>
 					<ul class="icons-list">
@@ -328,7 +343,13 @@
 			</section>
 
 			<section class="delivery grey narrow">
-				<div class="wrapper">
+				<div class="lines-bg">
+					<div class="l l1"></div>
+					<div class="l l2"></div>
+					<div class="l l3"></div>
+					<div class="l l4"></div>
+				</div>
+				<div class="wrapper triggerable scroll-trigger appear-up">
 					<h3>Доставка</h3>
 					<div class="del-general">Газобетон YTONG является высококачественным материалом, соответствующим всем требованиям современного строительства. Вместе с тем, на качество готовой конструкции также оказывает влияние правильная перевозка, хранение, а также разгрузка материала.</div>
 					<ul class="icons-list">

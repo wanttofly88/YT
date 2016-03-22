@@ -1,85 +1,74 @@
-define(['dispatcher', 'drop-down/drop-down.store'], function(dispatcher, store) {
+define(['dispatcher', 'cart/cart.store'], function(dispatcher, store) {
 
 	"use strict";
 
 	var items = {}
+	var inputItems = {}
 
-	//!!!replace if setting data-attribute!
-	var idName = 'drop-down-control-id-';
+	var idName = 'vart-add-id-';
 	var idNum  = 1;
 
 
 	var _handleChange = function() {
 		var storeData = store.getData();
 
-		var _checkItem = function(item) {
-			var id = item.id;
+		var checkItem = function(item) {
+			var storeItem;
 
-			if (!storeData.items.hasOwnProperty(id)) return;
-			item.active = storeData.items[id].active;
+			if (storeData.items.hasOwnProperty(item.id) && !item.active) {
 
-			if (item.active) {
-				item.element.classList.add('active');
-				if (item.iEl && item.aEl) {
-					item.iEl.innerHTML = 'свернуть';
-					item.aEl.innerHTML = 'свернуть';
-				}
-			} else {
-				item.element.classList.remove('active');
-				if (item.iEl && item.aEl) {
-					item.iEl.innerHTML = item.defaultText;
-					item.aEl.innerHTML = item.defaultText;
-				}
+				item.element.parentNode.classList.add('added');
+				item.active = true;
 			}
-
-			if (storeData.items[id].disabled) {
-				item.element.classList.add('hidden');
-			} else {
-				item.element.classList.remove('hidden');
+			if (!storeData.items.hasOwnProperty(item.id) && item.active) {
+				item.element.parentNode.classList.remove('added');
+				item.active = false;
 			}
 		}
 
 		for (var id in items) {
 			if (items.hasOwnProperty(id)) {
-				_checkItem(items[id]);
+				checkItem(items[id]);
 			}
 		}
 	}
 
+
+
 	var _add = function(items, element) {
 		var id = element.getAttribute('data-id');
-		var active = element.classList.contains('active');
-		var iEl = element.getElementsByClassName('i')[0];
-		var aEl = element.getElementsByClassName('a')[0];
-		var defaultText;
+
+		var handleClick = function(item) {
+			var num;
+
+			if (inputItems.hasOwnProperty(id)) {
+				num = inputItems[id].element.value;
+				if (num < 0) num = 0;
+			} else {
+				num = 1;
+			}
+
+			dispatcher.dispatch({
+				type: 'cart-add',
+				id: id,
+				number: num,
+				price: 0
+			});
+		}
+
+		if (element.classList.contains('cart-add')) {
+			element.addEventListener('click', handleClick);
+		}
 
 		if (!id) {
 			id = idName + idNum;
 			idNum++;
-
-			//setAttribute('data-id', id);
 		}
-
-		if (iEl) {
-			defaultText = iEl.innerHTML;
-		}
-
-		element.addEventListener('click', function() {
-			dispatcher.dispatch({
-				type: 'drop-down-toggle',
-				me:   'drop-down-controls',
-				id:   id
-			});
-		});
-
 
 		items[id] = {
 			id: id,
 			element: element,
-			active: active,
-			defaultText: defaultText,
-			iEl: iEl,
-			aEl: aEl
+			active: false
 		}
 	}
 
@@ -122,13 +111,23 @@ define(['dispatcher', 'drop-down/drop-down.store'], function(dispatcher, store) 
 		}
 
 		//-------
-		elements = document.getElementsByClassName('drop-down-control');
+		elements = document.getElementsByClassName('cart-add');
 		for (var i = 0; i < elements.length; i++) {
 			check(items, elements[i]);
 		}
 		for (var id in items) {
 			if (items.hasOwnProperty(id)) {
 				backCheck(items, elements, items[id]);
+			}
+		}
+
+		elements = document.getElementsByClassName('cart-add-number');
+		for (var i = 0; i < elements.length; i++) {
+			check(inputItems, elements[i]);
+		}
+		for (var id in inputItems) {
+			if (inputItems.hasOwnProperty(id)) {
+				backCheck(inputItems, elements, inputItems[id]);
 			}
 		}
 		//-------

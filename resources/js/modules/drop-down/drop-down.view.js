@@ -51,9 +51,9 @@ define(['dispatcher', 'drop-down/drop-down.store', 'resize/resize.store', 'resiz
 
 		item.element.classList.add('active');
 		_transition(item.element, h, 0);
+		clearTimeout(to);
 		setTimeout(function() {
 			_transition(item.element, item.inner.clientHeight, animationDelay);
-			clearTimeout(to);
 			to = setTimeout(function() {
 				item.element.style.height = 'auto';
 			}, animationDelay + 20);
@@ -70,7 +70,8 @@ define(['dispatcher', 'drop-down/drop-down.store', 'resize/resize.store', 'resiz
 
 		item.element.classList.remove('active');
 		_transition(item.element, item.inner.clientHeight, 0);
-		setTimeout(function() {
+		clearTimeout(to);
+		to = setTimeout(function() {
 			_transition(item.element, h, animationDelay);
 		}, 20);
 	}

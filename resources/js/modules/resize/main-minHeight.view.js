@@ -11,7 +11,7 @@ define(['dispatcher', 'resize/resize.store', 'resize/breakpoint.store'], functio
 		var storeData = store.getData();
 		var bpData = bpStore.getData();
 		var shift = 0;
-		if (contacts) shift = 200;
+		if (contacts) shift = 0;
 
 		if (bpData.breakpoint.name === 'desktop') {
 			main.style.minHeight = (storeData.height - footer.clientHeight - shift) + 'px';

@@ -173,9 +173,12 @@
 			<div class="nav-inner">
 				<div class="nav-cell">
 					<nav>
-						<span class="item active">
-							<span>Продукция</span>
-						</span>
+						<a class="item" href="production.html">
+							<span class="masked-link">
+								<span class="i">Продукция</span>
+								<span class="a">Продукция</span>
+							</span>
+						</a>
 						<a class="item" href="projects.html">
 							<span class="masked-link">
 								<span class="i">Проекты домов</span>
@@ -207,6 +210,16 @@
 							</span>
 						</a>
 					</nav>
+					<a href="tel:+74952015118" class="phone">+7 495 201-51-18</a>
+					<span class="callback view-popup-toggle" data-id="callback-popup">
+						<span class="ico-link call">
+							<span class="ico"></span>
+							<span class="tx">
+								<span class="i">заказать звонок</span>
+								<span class="a">заказать звонок</span>
+							</span>
+						</a>
+					</span>
 				</div>
 			</div>
 		</div>
@@ -257,7 +270,9 @@
 			<a href="cart.html" class="cart bg-link bg-grey">
 				<span class="tx">
 					<span class="ico i-cart"></span>
-					список покупок (<span class="view-cart-number-total">17</span>)
+					<span class="show1000">список покупок (</span><!--
+				 --><span class="view-cart-number-total">17</span><!--
+				 --><span class="show1000">)</span>
 				</span>
 			</a>
 			<a href="tel:88000000000" class="phone">8 800 000 00 00</a>
@@ -279,50 +294,53 @@
 				<div class="l l4"></div>
 			</div>
 			
-			<section class="narrow service school">
+			<section class="narrow service">
 				<div class="wrapper">
-					<div class="img service-img">
-						<img src="tmp/school.jpg" alt="">
+					<div class="img service-img triggerable scroll-trigger">
+						<img src="resources/images/service-fake.png" alt="" class="img-fake">
+						<div class="img-wrap">
+							<img class="img-true" src="tmp/school.jpg" alt="">
+						</div>
 						<div class="num">01</div>
 					</div>
-					
-					<div class="service-text">
-						<h3>Школа профессионалов</h3>
-						<div class="general">Пройдите обучение бесплатно. Повышение уровня профессионального мастерства строителей. Освоение новейших технологий в области строительства.</div>
-					</div>
-					
-					<article>
-						<p>Пройдите обучение бесплатно. Повышение уровня профессионального мастерства строителей. Освоение новейших технологий в области строительства.</p>
-					</article>
 
-					<div class="drop-down-container" data-id="sdd-1"
-						data-height-mobile="0"
-						data-height-tablet="0"
-						data-height-desktop="0">
-						<div class="drop-down-inner">
-							<article>
-								<p>Пройдите обучение бесплатно. Повышение уровня профессионального мастерства строителей. Освоение новейших технологий в области строительства.</p>
-								<p>Пройдите обучение бесплатно. Повышение уровня профессионального мастерства строителей. Освоение новейших технологий в области строительства.</p>
-							</article>
+					<div class="triggerable scroll-trigger appear-up">
+						<div class="service-text">
+							<h3>Школа профессионалов</h3>
+							<div class="general">Пройдите обучение бесплатно. Повышение уровня профессионального мастерства строителей. Освоение новейших технологий в области строительства.</div>
+						</div>
+						
+						<article>
+							<p>Пройдите обучение бесплатно. Повышение уровня профессионального мастерства строителей. Освоение новейших технологий в области строительства.</p>
+						</article>
+
+						<div class="drop-down-container" data-id="sdd-1"
+							data-height-mobile="0"
+							data-height-tablet="0"
+							data-height-desktop="0">
+							<div class="drop-down-inner">
+								<article>
+									<p>Пройдите обучение бесплатно. Повышение уровня профессионального мастерства строителей. Освоение новейших технологий в области строительства.</p>
+									<p>Пройдите обучение бесплатно. Повышение уровня профессионального мастерства строителей. Освоение новейших технологий в области строительства.</p>
+								</article>
+							</div>
+						</div>
+
+						<div class="ico-link-container">
+							<span class="ico-link a-d drop-down-control" data-id="sdd-1">
+								<span class="arrow"></span>
+								<span class="tx">
+									<span class="i">подбробнее</span>
+									<span class="a">подбробнее</span>
+								</span>
+							</span>
 						</div>
 					</div>
-
-					<div class="ico-link-container">
-						<span class="ico-link a-d drop-down-control" data-id="sdd-1">
-							<span class="arrow"></span>
-							<span class="tx">
-								<span class="i">подбробнее</span>
-								<span class="a">подбробнее</span>
-							</span>
-						</span>
-					</div>
-
-
 					
 				</div>
 			</section>
 
-			<section class="narrow service master grey">
+			<section class="narrow service grey">
 				<div class="lines-bg">
 					<div class="l l1"></div>
 					<div class="l l2"></div>
@@ -330,109 +348,117 @@
 					<div class="l l4"></div>
 				</div>
 				<div class="wrapper">
-					<div class="img service-img">
-						<img src="tmp/master.jpg" alt="">
+					<div class="img service-img triggerable scroll-trigger">
+						<img src="resources/images/service-fake.png" alt="" class="img-fake">
+						<div class="img-wrap">
+							<img class="img-true" src="tmp/master.jpg" alt="">
+						</div>
 						<div class="num">02</div>
 					</div>
 
-					<div class="service-text">
-						<h3>Мастер-демонстратор</h3>
-						<div class="general">Помимо предоставления полной гаммы продукции для строительства дома мы рады предложить своим клиентам практическую помощь и консультации со стороны мастера-демонстратора YTONG.</div>
-					</div>
+					<div class="triggerable scroll-trigger appear-up">
 
-					<div class="drop-down-container" data-id="sdd-2"
-						data-height-mobile="0"
-						data-height-tablet="0"
-						data-height-desktop="0">
-						<div class="drop-down-inner">
-							<article>
-								<p>Пройдите обучение бесплатно. Повышение уровня профессионального мастерства строителей. Освоение новейших технологий в области строительства.</p>
-								<p>Пройдите обучение бесплатно. Повышение уровня профессионального мастерства строителей. Освоение новейших технологий в области строительства.</p>
-							</article>
+						<div class="service-text">
+							<h3>Мастер-демонстратор</h3>
+							<div class="general">Помимо предоставления полной гаммы продукции для строительства дома мы рады предложить своим клиентам практическую помощь и консультации со стороны мастера-демонстратора YTONG.</div>
+						</div>
+
+						<div class="drop-down-container" data-id="sdd-2"
+							data-height-mobile="0"
+							data-height-tablet="0"
+							data-height-desktop="0">
+							<div class="drop-down-inner">
+								<article>
+									<p>Пройдите обучение бесплатно. Повышение уровня профессионального мастерства строителей. Освоение новейших технологий в области строительства.</p>
+									<p>Пройдите обучение бесплатно. Повышение уровня профессионального мастерства строителей. Освоение новейших технологий в области строительства.</p>
+								</article>
+							</div>
+						</div>
+
+						<div class="ico-link-container">
+							<span class="ico-link a-d drop-down-control" data-id="sdd-2">
+								<span class="arrow"></span>
+								<span class="tx">
+									<span class="i">подбробнее</span>
+									<span class="a">подбробнее</span>
+								</span>
+							</span>
 						</div>
 					</div>
-
-					<div class="ico-link-container">
-						<span class="ico-link a-d drop-down-control" data-id="sdd-2">
-							<span class="arrow"></span>
-							<span class="tx">
-								<span class="i">подбробнее</span>
-								<span class="a">подбробнее</span>
-							</span>
-						</span>
-					</div>
-
 
 				</div>
 			</section>
 
-			<section class="narrow service type-project">
+			<section class="narrow service">
 				<div class="wrapper">
-					<div class="img service-img">
-						<img src="tmp/project.jpg" alt="">
+					<div class="img service-img triggerable scroll-trigger">
+						<img src="resources/images/service-fake.png" alt="" class="img-fake">
+						<div class="img-wrap">
+							<img class="img-true" src="tmp/general-project.jpg" alt="">
+						</div>
 						<div class="num">03</div>
 					</div>
 
-					<div class="service-text">
-						<h3>Типовые проекты</h3>
-						<div class="general">Компания Xella предоставляет поддержку клиентам в виде технических консультаций.</div>
-						<article>
-							<p>Вы можете получить консультацию по характеристикам блоков, по типовым проектам, по расчету конструкционных узлов будущей постройки.</p>
-						</article>
-						<div class="btn white">
-							<span>Смотреть типовые проекты</span>
-						</div>
-					</div>
+					<div class="triggerable scroll-trigger appear-up">
 
-					<div class="drop-down-container" data-id="sdd-3"
-						data-height-mobile="0"
-						data-height-tablet="0"
-						data-height-desktop="0">
-						<div class="drop-down-inner">
-							<div class="tp-inner">
-								<h5>3 простых шага для приобретения типового проекта</h5>
-								<div class="ico-line">
-									<div class="item">
-										<div class="inner">
-											<div class="ico i1"></div>
-											<div class="text">Зарегистрируйтесь на сайте <a href="#">ytong.ru</a>, после чего с вами свяжется наш специалист для уточнения деталей и выставления счета</div>
-										</div>
-									</div>
-									<div class="item">
-										<div class="inner">
-											<div class="ico i2"></div>
-											<div class="text">Оплатите стоимость материалов, кратных вашему проекту у ближайшего официального дистрибьютора YTONG</div>
-										</div>
-									</div>
-									<div class="item">
-										<div class="inner">
-											<div class="ico i3"></div>
-											<div class="text">Получите проектную документацию в офисе YTONG</div>
-										</div>
-									</div>
-									<div class="clear"></div>
-								</div>
-								<div class="consult">Получить техническую консультацию можно в офисе компании по предварительной записи по телефону: +7 (495) 2015-118</div>
+						<div class="service-text">
+							<h3>Типовые проекты</h3>
+							<div class="general">Компания Xella предоставляет поддержку клиентам в виде технических консультаций.</div>
+							<article>
+								<p>Вы можете получить консультацию по характеристикам блоков, по типовым проектам, по расчету конструкционных узлов будущей постройки.</p>
+							</article>
+							<div class="btn white">
+								<span>Смотреть типовые проекты</span>
 							</div>
 						</div>
-					</div>
-
-					<div class="ico-link-container">
-						<span class="ico-link a-d drop-down-control" data-id="sdd-3">
-							<span class="arrow"></span>
-							<span class="tx">
-								<span class="i">подбробнее</span>
-								<span class="a">подбробнее</span>
+						<div class="drop-down-container" data-id="sdd-3"
+							data-height-mobile="0"
+							data-height-tablet="0"
+							data-height-desktop="0">
+							<div class="drop-down-inner">
+								<div class="tp-inner">
+									<h5>3 простых шага для приобретения типового проекта</h5>
+									<div class="ico-line">
+										<div class="item">
+											<div class="inner">
+												<div class="ico i1"></div>
+												<div class="text">Зарегистрируйтесь на сайте <a href="#">ytong.ru</a>, после чего с вами свяжется наш специалист для уточнения деталей и выставления счета</div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="inner">
+												<div class="ico i2"></div>
+												<div class="text">Оплатите стоимость материалов, кратных вашему проекту у ближайшего официального дистрибьютора YTONG</div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="inner">
+												<div class="ico i3"></div>
+												<div class="text">Получите проектную документацию в офисе YTONG</div>
+											</div>
+										</div>
+										<div class="clear"></div>
+									</div>
+									<div class="consult">Получить техническую консультацию можно в офисе компании по предварительной записи по телефону: +7 (495) 2015-118</div>
+								</div>
+							</div>
+						</div>
+						<div class="ico-link-container">
+							<span class="ico-link a-d drop-down-control" data-id="sdd-3">
+								<span class="arrow"></span>
+								<span class="tx">
+									<span class="i">подбробнее</span>
+									<span class="a">подбробнее</span>
+								</span>
 							</span>
-						</span>
+						</div>
+
 					</div>
-
-
 
 				</div>
 			</section>
 
-			<section class="narrow service calculator grey">
+			<section class="narrow service grey">
 				<div class="lines-bg">
 					<div class="l l1"></div>
 					<div class="l l2"></div>
@@ -440,17 +466,105 @@
 					<div class="l l4"></div>
 				</div>
 				<div class="wrapper">
-					<div class="img service-img">
-						<img src="tmp/calculator.jpg" alt="">
+					<div class="img service-img triggerable scroll-trigger">
+						<img src="resources/images/service-fake.png" alt="" class="img-fake">
+						<div class="img-wrap">
+							<img class="img-true" src="tmp/guide.jpg" alt="">
+						</div>
 						<div class="num">04</div>
 					</div>
 
-					<div class="service-text">
-						<h3>Онлайн-калькулятор</h3>
-						<div class="general">Для вас создан удобный инструмент расчета примерной стоимости постройки дома или иного объекта.</div>
+					<div class="triggerable scroll-trigger appear-up">
+						<div class="service-text">
+							<h3>Энциклопедия строительства</h3>
+							<div class="general">Компания Xella предоставляет поддержку клиентам в виде технических консультаций.</div>
 
-						<div class="btn white">
-							<span>начать расчет</span>
+							<article>
+								<p>Вы можете получить консультацию по характеристикам блоков, по типовым проектам, по расчету ...</p>
+							</article>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="narrow service">
+				<div class="lines-bg">
+					<div class="l l1"></div>
+					<div class="l l2"></div>
+					<div class="l l3"></div>
+					<div class="l l4"></div>
+				</div>
+				<div class="wrapper">
+					<div class="img service-img triggerable scroll-trigger">
+						<img src="resources/images/service-fake.png" alt="" class="img-fake">
+						<div class="img-wrap">
+							<img class="img-true" src="tmp/calculator.jpg" alt="">
+						</div>
+						<div class="num">05</div>
+					</div>
+
+					<div class="triggerable scroll-trigger appear-up">
+						<div class="service-text">
+							<h3>Онлайн-калькулятор</h3>
+							<div class="general">Для вас создан удобный инструмент расчета примерной стоимости постройки дома или иного объекта.</div>
+
+							<div class="btn white">
+								<span>начать расчет</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="narrow service grey">
+				<div class="lines-bg">
+					<div class="l l1"></div>
+					<div class="l l2"></div>
+					<div class="l l3"></div>
+					<div class="l l4"></div>
+				</div>
+				<div class="wrapper">
+					<div class="img service-img triggerable scroll-trigger">
+						<img src="resources/images/service-fake.png" alt="" class="img-fake">
+						<div class="img-wrap">
+							<img class="img-true" src="tmp/rail.jpg" alt="">
+						</div>
+						<div class="num">06</div>
+					</div>
+					<div class="triggerable scroll-trigger appear-up">
+						<div class="service-text">
+							<h3>Ж/Д доставка по России и странам СНГ</h3>
+							<div class="general">Наша компания является единственным дистрибьютором, имеющим собственную, утвержденную схему погрузки на ж/д транспорт и собственные подъездные пути.</div>
+							<article>
+								<p>Мы осуществляем железнодорожные поставки по всем регионам РФ, СНГ и другим республикам.</p>
+							</article>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="narrow service">
+				<div class="lines-bg">
+					<div class="l l1"></div>
+					<div class="l l2"></div>
+					<div class="l l3"></div>
+					<div class="l l4"></div>
+				</div>
+				<div class="wrapper">
+					<div class="img service-img triggerable scroll-trigger">
+						<img src="resources/images/service-fake.png" alt="" class="img-fake">
+						<div class="img-wrap">
+							<img class="img-true" src="tmp/crane.jpg" alt="">
+						</div>
+						<div class="num">07</div>
+					</div>
+					<div class="triggerable scroll-trigger appear-up">
+						<div class="service-text">
+							<h3>Доставка манипулятором</h3>
+							<div class="general">Каждый клиент, при покупке газобетонных блоков YTONG, оплачивает только доставку манипулятором.</div>
+							<article>
+								<p>Выгрузка паллет — в подарок.</p>
+							</article>
 						</div>
 					</div>
 				</div>
