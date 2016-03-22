@@ -27,6 +27,10 @@ define(['dispatcher'], function(dispatcher) {
 			}
 		}, false);
 
+		if (element.value) {
+			element.parentNode.classList.add('not-empty');
+		}
+
 		if (!id) {
 			id = idName + idNum;
 			idNum++;

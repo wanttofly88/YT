@@ -23,12 +23,12 @@ define(['dispatcher', 'map/map.store'], function(dispatcher, store) {
 				console.warn('marker lat or/and lng is missing');
 			}
 
-			iconPath = path +  'images/marker.svg';
+			iconPath = path +  'images/marker.png';
 
 
 			icon = {
 				url: iconPath,
-				size: new google.maps.Size(60, 71),
+				size: new google.maps.Size(120, 142),
 				origin: new google.maps.Point(0, 0),
 				anchor: new google.maps.Point(30, 71),
 				scaledSize: new google.maps.Size(60, 71)

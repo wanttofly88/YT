@@ -31,6 +31,17 @@
 	font-style: normal;
 	font-stretch: normal;
 }
+@font-face {
+	font-family:'PTRoubleSans';
+	src: url('../fonts/PTRoubleSans_gdi.eot');
+	src: url('../fonts/PTRoubleSans_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/PTRoubleSans_gdi.woff') format('woff'),
+		url('../fonts/PTRoubleSans_gdi.ttf') format('truetype'),
+		url('../fonts/PTRoubleSans_gdi.svg#PTRoubleSans-Regular') format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+}
 
 * {
 	margin: 0;
@@ -337,13 +348,13 @@ header .menu-btn.active .b3 {
 		top: auto;
 		margin: 0;
 		width: 100%;
-		height: 55px;
+		height: 60px;
 		display: block;
 		font-size: 12px;
 	}
 	header .cart .tx {
 		position: relative;
-		top: 20px;
+		top: 25px;
 		padding-left: 30px;
 	}
 	header .phone {
@@ -364,7 +375,9 @@ header .menu-btn.active .b3 {
 		text-align: center;
 	}
 }
-
+.roub {
+	font-family: 'PTRoubleSans' !important;
+}
 nav {
 	text-align: center;
 	margin-bottom: 90px;
@@ -1644,8 +1657,9 @@ a:hover .masked-link .a {
 	background: #f2f2f2;
 }
 .catalog .cat-general {
-	font-size: 16px;
-	line-height: 1.7;
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 1.5;
 	margin-bottom: 45px;
 	text-align: center;
 }
@@ -2642,26 +2656,36 @@ footer .cr {
 }
 @media screen and (min-width: 640px) {
 	.order-submit {
+		position: relative;
 		padding-top: 0;
 		padding-bottom: 0;
+		height: 100px;
 	}
 	.order-submit .btn {
 		width: 200px;
 	}
 	.order-submit .r1 {
+		position: relative;
 		text-align: left;
 		padding-top: 40px;
 		width: 30%;
+		z-index: 1;
 	}
 	.order-submit .r2 {
-		text-align: left;
+		position: absolute;
+		left: 0;
+		top: 0;
+		text-align: center;
 		padding-top: 20px;
-		width: 49%;
+		width: 100%;
 	}
 	.order-submit .r3 {
+		position: relative;
+		float: right;
 		text-align: left;
-		padding-top: 20px;
+		padding-top: 28px;
 		width: 21%;
+		z-index: 1;
 	}
 }
 @media screen and (min-width: 1000px) {
@@ -2672,8 +2696,6 @@ footer .cr {
 		width: 27%;
 	}
 	.order-submit .r2 {
-		text-align: left;
-		width: 57%;
 	}
 	.order-submit .r3 {
 		width: 16%;
@@ -2886,7 +2908,8 @@ form .select-display {
 	line-height: 40px;
 	transition: all 0.2s;
 }
-form .input-wrapper.focus .input-placeholder {
+form .input-wrapper.focus .input-placeholder,
+form .input-wrapper.not-empty .input-placeholder {
 	opacity: 0;
 }
 form .select-display {
@@ -3078,8 +3101,8 @@ form option {
 	color: #191919;
 }
 .contact .addr {
-	color: #7f7f7f;
-	line-height: 1.75;
+	font-size: 16px;
+	line-height: 1.7;
 	margin-bottom: 43px;
 }
 .contact .route-link-container {
@@ -3224,7 +3247,9 @@ form option {
 		width: 58%;
 	}
 }
-
+.service .tp-inner h5 {
+	margin-bottom: 60px;
+}
 
 
 /*.master {
@@ -3245,11 +3270,12 @@ form option {
 .type-project h5 {
 	margin-bottom: 50px;
 }
-.type-project .consult {
+*/
+.service .consult {
 	font-size: 16px;
 	line-height: 1.7;
 	margin-bottom: 30px;
-}*/
+}
 .ico-line {
 	margin-left: -30px;
 	margin-bottom: 35px;
