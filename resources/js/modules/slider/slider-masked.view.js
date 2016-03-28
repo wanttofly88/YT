@@ -235,6 +235,9 @@ define(['dispatcher', 'slider/slider.store', 'TweenMax'], function(dispatcher, s
 				item.slides[item.index].element.classList.remove('lower-moving');
 				zSet = false;
 			}
+
+			container.removeEventListener('touchmove', ontouchmove, false);
+			container.removeEventListener('touchend',  ontouchend, false);
 		}
 
 		container.addEventListener('touchstart', ontouchstart);
