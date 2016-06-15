@@ -1,68 +1,49 @@
-define(['dispatcher', 'selects/selects.store'], function(dispatcher, store) {
+define(['dispatcher'], function(dispatcher) {
 
 	"use strict";
 
 	var items = {}
 
-	var idName = 'select-id-';
+	var idName = 'group-hover-id-';
 	var idNum  = 1;
-
-
-	var _handleChange = function() {
-		var storeData = store.getData();
-		var checkItem = function(item) {
-			var storeItem;
-			if (!storeData.items.hasOwnProperty(item.id)) return;
-			storeItem = storeData.items[item.id];
-
-			if (storeItem.value === item.element.value) return;
-			item.element.value = storeItem.value;
-		}
-
-		for (var id in items) {
-			if (items.hasOwnProperty(id)) {
-				checkItem(items[id]);
-			}
-		}
-	}
 
 	var _add = function(items, element) {
 		var id = element.getAttribute('data-id');
-		var value = element.value;
+		var innerHovers;
+
+		var handleInner = function(innerElement) {
+			innerElement.addEventListener('mouseenter', function() {
+				element.classList.add('group-hover-active');
+				for (var i = 0; i < innerHovers.length; i++) {
+					innerHovers[i].classList.add('hover');
+				}
+			});
+			innerElement.addEventListener('mouseleave', function() {
+				element.classList.remove('group-hover-active');
+				for (var i = 0; i < innerHovers.length; i++) {
+					innerHovers[i].classList.remove('hover');
+				}
+			});
+		}
 
 		if (!id) {
 			id = idName + idNum;
 			idNum++;
 		}
 
-		element.addEventListener('change', function(e) {
-			dispatcher.dispatch({
-				type: 'select-change',
-				id: id,
-				value: element.value,
-				text: element.options[element.selectedIndex].text
-			});
-		});
+		innerHovers = element.getElementsByClassName('group-hover-inner');
+
+		for (var i = 0; i < innerHovers.length; i++) {
+			handleInner(innerHovers[i]);
+		}
 
 		items[id] = {
 			id: id,
 			element: element
 		}
-
-		dispatcher.dispatch({
-			type: 'select-add',
-			id: id,
-			value: value,
-			text: element.options[element.selectedIndex].text
-		});
 	}
 
 	var _remove = function(items, item) {
-		dispatcher.dispatch({
-			type: 'select-remove',
-			id: item.id
-		});
-
 		delete items[item.id];
 	}
 
@@ -100,8 +81,8 @@ define(['dispatcher', 'selects/selects.store'], function(dispatcher, store) {
 			}
 		}
 
-		//-------
-		elements = document.getElementsByClassName('view-select');
+
+		elements = document.getElementsByClassName('group-hover');
 		for (var i = 0; i < elements.length; i++) {
 			check(items, elements[i]);
 		}
@@ -110,19 +91,14 @@ define(['dispatcher', 'selects/selects.store'], function(dispatcher, store) {
 				backCheck(items, elements, items[id]);
 			}
 		}
-		//-------
 	}
 
 	var init = function() {
 		_handleMutate();
-		_handleChange();
-
-		store.eventEmitter.subscribe(_handleChange);
 
 		dispatcher.subscribe(function(e) {
 			if (e.type === 'mutate') {
 				_handleMutate();
-				_handleChange();
 			}
 		});
 	}

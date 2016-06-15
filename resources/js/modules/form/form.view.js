@@ -46,9 +46,6 @@ define(['dispatcher', 'form/form.store', 'utils'], function(dispatcher, store, u
 				if (!input.value || input.value === '') {
 					input.parentNode.classList.add('error');
 					result = false;
-					setTimeout(function() {
-						input.parentNode.classList.remove('error');
-					}, 400);
 				}
 			}
 

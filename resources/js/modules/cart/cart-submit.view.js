@@ -1,22 +1,26 @@
-define(['dispatcher', 'selects/selects.store'], function(dispatcher, store) {
+define(['dispatcher', 'cart/cart.store', 'utils'], function(dispatcher, store, utils) {
 
 	"use strict";
 
 	var items = {}
 
-	var idName = 'select-id-';
+	//!!!replace if setting data-attribute!
+	var idName = 'new-id-';
 	var idNum  = 1;
+	var initial = true;
 
 
 	var _handleChange = function() {
 		var storeData = store.getData();
+
 		var checkItem = function(item) {
 			var storeItem;
-			if (!storeData.items.hasOwnProperty(item.id)) return;
-			storeItem = storeData.items[item.id];
 
-			if (storeItem.value === item.element.value) return;
-			item.element.value = storeItem.value;
+			if (storeData.totalPrice <= 0) {
+				item.element.classList.add('inactive');
+			} else {
+				item.element.classList.remove('inactive');
+			}
 		}
 
 		for (var id in items) {
@@ -28,41 +32,59 @@ define(['dispatcher', 'selects/selects.store'], function(dispatcher, store) {
 
 	var _add = function(items, element) {
 		var id = element.getAttribute('data-id');
-		var value = element.value;
+		var action = element.getAttribute('data-action');
 
 		if (!id) {
 			id = idName + idNum;
 			idNum++;
+
+			//setAttribute('data-id', id);
 		}
 
-		element.addEventListener('change', function(e) {
+		if (!action) {
+			console.warn('data-action is not defined');
+			return;
+		}
+
+		element.addEventListener('click', function(e) {
+			var storeData = store.getData();
+			var data = {};
+			e.preventDefault();
+
+			if (storeData.totalPrice <= 0) return;
+
+			data['ajax'] = true;
+
+			data = JSON.stringify(data);
+
+			utils.ajax.post(action, data, function(responce) {
+				var json;
+				dispatcher.dispatch({
+					type: 'cart-responded',
+					responce: responce
+				});
+
+				json = JSON.parse(responce);
+				if (json.status === 'success') {
+					element.parentNode.classList.add('submitted');
+				}
+				
+			}, true, 'json');
+
 			dispatcher.dispatch({
-				type: 'select-change',
-				id: id,
-				value: element.value,
-				text: element.options[element.selectedIndex].text
+				type: 'cart-submit'
 			});
 		});
 
+
 		items[id] = {
 			id: id,
+			action: action,
 			element: element
 		}
-
-		dispatcher.dispatch({
-			type: 'select-add',
-			id: id,
-			value: value,
-			text: element.options[element.selectedIndex].text
-		});
 	}
 
 	var _remove = function(items, item) {
-		dispatcher.dispatch({
-			type: 'select-remove',
-			id: item.id
-		});
-
 		delete items[item.id];
 	}
 
@@ -101,7 +123,7 @@ define(['dispatcher', 'selects/selects.store'], function(dispatcher, store) {
 		}
 
 		//-------
-		elements = document.getElementsByClassName('view-select');
+		elements = document.getElementsByClassName('view-cart-submit');
 		for (var i = 0; i < elements.length; i++) {
 			check(items, elements[i]);
 		}
@@ -115,14 +137,12 @@ define(['dispatcher', 'selects/selects.store'], function(dispatcher, store) {
 
 	var init = function() {
 		_handleMutate();
-		_handleChange();
 
 		store.eventEmitter.subscribe(_handleChange);
 
 		dispatcher.subscribe(function(e) {
 			if (e.type === 'mutate') {
 				_handleMutate();
-				_handleChange();
 			}
 		});
 	}

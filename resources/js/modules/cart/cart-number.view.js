@@ -1,4 +1,4 @@
-define(['dispatcher', 'cart/cart.store'], function(dispatcher, store) {
+define(['dispatcher', 'cart/cart.store', 'utils'], function(dispatcher, store, utils) {
 
 	"use strict";
 
@@ -34,6 +34,13 @@ define(['dispatcher', 'cart/cart.store'], function(dispatcher, store) {
 		var id = element.getAttribute('data-id');
 		var min, max;
 
+		var action = element.getAttribute('data-action');
+
+		if (!action) {
+			console.warn('data-action is not defined');
+			return;
+		}
+
 		if (element.tagName.toLowerCase() !== 'input') return;
 
 		min = element.getAttribute('min') || 0;
@@ -49,16 +56,38 @@ define(['dispatcher', 'cart/cart.store'], function(dispatcher, store) {
 		}
 
 		element.addEventListener('change', function(e) {
+			var num;
+			var data = {};
+
 			if (element.value < min) {
 				element.value = min;
 			}
 			if (element.value > max) {
 				element.value = max;
 			}
+			if (element.value === '') {
+				element.value = 1;
+			}
+
+			num = parseFloat(element.value);
+
+			data['id'] = id;
+			data['ajax'] = true;
+			data['number'] = num;
+
+			data = JSON.stringify(data);
+
+			utils.ajax.post(action, data, function(responce) {
+				dispatcher.dispatch({
+					type: 'cart-responded',
+					responce: responce
+				});
+			}, true, 'json');
+
 			dispatcher.dispatch({
-				type: 'cart-edit',
+				type: 'cart-set-number',
 				id: id,
-				number: parseFloat(element.value)
+				number: parseFloat(num)
 			})
 		});
 
@@ -123,7 +152,7 @@ define(['dispatcher', 'cart/cart.store'], function(dispatcher, store) {
 
 	var init = function() {
 		_handleMutate();
-		_handleChange();
+		// _handleChange();
 
 		store.eventEmitter.subscribe(_handleChange);
 

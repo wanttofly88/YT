@@ -10,8 +10,10 @@ define(['dispatcher'], function(dispatcher) {
 			if (items.hasOwnProperty(e.id)) return;
 			items[e.id] = {
 				id: e.id,
-				value: e.value
+				value: e.value,
+				text: e.text
 			}
+
 		}
 		if (e.type === 'select-remove') {
 			if (!items.hasOwnProperty(e.id)) return;
@@ -20,6 +22,7 @@ define(['dispatcher'], function(dispatcher) {
 		if (e.type === 'select-change') {
 			if (!items.hasOwnProperty(e.id)) return;
 			items[e.id].value = e.value;
+			items[e.id].text  = e.text;
 
 			eventEmitter.dispatch();
 		}

@@ -1,4 +1,4 @@
-define(['dispatcher', 'cart/cart.store'], function(dispatcher, store) {
+define(['dispatcher', 'cart/cart.store', 'utils'], function(dispatcher, store, utils) {
 
 	"use strict";
 
@@ -7,14 +7,21 @@ define(['dispatcher', 'cart/cart.store'], function(dispatcher, store) {
 	//!!!replace if setting data-attribute!
 	var idName = 'cart-remove-all-id-';
 	var idNum  = 1;
+	var initialized = false;
 
 
 	var _handleChange = function() {
-		var storeData = store.getData();
+
 	}
 
 	var _add = function(items, element) {
 		var id = element.getAttribute('data-id');
+		var action = element.getAttribute('data-action');
+
+		if (!action) {
+			console.warn('data-action is not defined');
+			return;
+		}
 
 		if (!id) {
 			id = idName + idNum;
@@ -24,11 +31,37 @@ define(['dispatcher', 'cart/cart.store'], function(dispatcher, store) {
 		}
 
 		element.addEventListener('click', function(e) {
+			var data = {};
+			var storeData;
+			data['id'] = id;
+			data['ajax'] = true;
+			data['number'] = 0;
+
+			data = JSON.stringify(data);
+
+			utils.ajax.post(action, data, function(responce) {
+				dispatcher.dispatch({
+					type: 'cart-responded',
+					responce: responce
+				});
+			}, true, 'json');
+
+
 			dispatcher.dispatch({
-				type: 'cart-remove-all',
-				id: id
+				type: 'cart-set-number',
+				id: id,
+				number: 0
 			});
+
+			storeData = store.getData();
+			if (storeData.totalNumber <= 0 && initialized) {
+				setTimeout(function() {
+					location.href = '/';
+				}, 600);
+			}
 		});
+
+		initialized = true;
 
 		items[id] = {
 			id: id,
@@ -89,14 +122,13 @@ define(['dispatcher', 'cart/cart.store'], function(dispatcher, store) {
 
 	var init = function() {
 		_handleMutate();
-		_handleChange();
+		// _handleChange();
 
 		store.eventEmitter.subscribe(_handleChange);
 
 		dispatcher.subscribe(function(e) {
 			if (e.type === 'mutate') {
 				_handleMutate();
-				_handleChange();
 			}
 		});
 	}

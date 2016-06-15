@@ -44,6 +44,7 @@ require([
 	'popup/popup.view',
 	'popup/popup-controls.view',
 	'popup/popup-close.view',
+	'popup/cart-popup.view',
 	'overlay/overlay.view',
 	'selects/selects.view',
 	'selects/selects-display.view',
@@ -53,13 +54,15 @@ require([
 	'cart/cart-remove-all.view',
 	'cart/cart-number-total.view',
 	'cart/cart-add.view',
+	'cart/cart-get.view',
 	'drop-down/drop-down.view',
 	'drop-down/drop-down-controls.view',
 	'drop-down/drop-down-contacts.view',
 	'map/map.view',
 	'map/map-markers.view',
 	'map/map-controls.view',
-	'video/video-main.view'
+	'video/video-main.view',
+	'decor/group-hover.view'
 	], function(
 		domReady,
 		vhUnits,
@@ -81,6 +84,7 @@ require([
 		popup,
 		popupControls,
 		popupClose,
+		cartPopup,
 		overlay,
 		selects,
 		selectsDisplay,
@@ -90,13 +94,15 @@ require([
 		cartRemoveAll,
 		cartNumberTotal,
 		cartAdd,
+		cartGet,
 		dropDown,
 		dropDownControls,
 		dropDownContacts,
 		map,
 		mapMarkers,
 		mapControls,
-		videoMain
+		videoMain,
+		groupHover
 	) {
 	domReady(function () {
 		vhUnits.init();
@@ -118,6 +124,7 @@ require([
 		popup.init();
 		popupControls.init();
 		popupClose.init();
+		cartPopup.init();
 		overlay.init();
 		selects.init();
 		selectsDisplay.init();
@@ -127,6 +134,7 @@ require([
 		cartRemoveAll.init();
 		cartNumberTotal.init();
 		cartAdd.init();
+		cartGet.init();
 		dropDown.init();
 		dropDownControls.init();
 		dropDownContacts.init();
@@ -134,5 +142,6 @@ require([
 		mapMarkers.init();
 		mapControls.init();
 		videoMain.init();
+		groupHover.init();
 	});
 });

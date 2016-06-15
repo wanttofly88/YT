@@ -17,8 +17,10 @@ define(['dispatcher', 'cart/cart.store'], function(dispatcher, store) {
 				delete items[item.id];
 			}, 400);
 		}
-		var addItem = function() {
 
+		var addItem = function() {
+			//not supported
+			location.reload();
 		}
 
 		var checkItem = function(item) {
@@ -52,11 +54,23 @@ define(['dispatcher', 'cart/cart.store'], function(dispatcher, store) {
 			}
 		}
 
+		// var backCheckItem = function(storeItem) {
+		// 	if (!items.hasOwnProperty(storeItem.id)) {
+		// 		addItem(item);
+		// 	}
+		// }
+
 		for (var id in items) {
 			if (items.hasOwnProperty(id)) {
 				checkItem(items[id]);
 			}
 		}
+
+		// for (var id in storeData.items) {
+		// 	if (storeData.items.hasOwnProperty(id)) {
+		// 		backCheckItem(storeData.items[id]);
+		// 	}
+		// }
 	}
 
 	var _parsePrice = function(num) {
@@ -113,12 +127,12 @@ define(['dispatcher', 'cart/cart.store'], function(dispatcher, store) {
 			idNum++;
 		}
 
-		dispatcher.dispatch({
-			type: 'cart-add',
-			id: id,
-			number: number,
-			price: price
-		});
+		// dispatcher.dispatch({
+		// 	type: 'cart-add',
+		// 	id: id,
+		// 	number: number,
+		// 	price: price
+		// });
 
 		items[id] = {
 			id: id,
@@ -184,7 +198,7 @@ define(['dispatcher', 'cart/cart.store'], function(dispatcher, store) {
 
 	var init = function() {
 		_handleMutate();
-		_handleChange();
+		// _handleChange();
 
 		store.eventEmitter.subscribe(_handleChange);
 

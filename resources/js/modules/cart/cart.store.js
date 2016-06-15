@@ -19,6 +19,14 @@ define(['dispatcher'], function(dispatcher) {
 			}
 		}
 
+		if (e.type === 'cart-set') {
+			items = e.items;
+			totalPrice = e.totalPrice;
+			totalNumber = e.totalNumber;
+
+			eventEmitter.dispatch();
+		}
+
 		if (e.type === 'cart-add') {
 			if (items.hasOwnProperty(e.id)) {
 				items[e.id].number += parseFloat(e.number);
@@ -31,7 +39,7 @@ define(['dispatcher'], function(dispatcher) {
 				if (e.number <= 0) return;
 				items[e.id] = {
 					number: parseFloat(e.number),
-					price: parseFloat(e.price),
+					price:  parseFloat(e.price),
 					totalPrice: parseFloat(e.number)*parseFloat(e.price)
 				}
 			}
@@ -39,6 +47,7 @@ define(['dispatcher'], function(dispatcher) {
 			recountTotal();
 			eventEmitter.dispatch();
 		}
+
 		if (e.type === 'cart-remove') {
 			if (!items.hasOwnProperty(e.id)) return;
 
@@ -51,6 +60,7 @@ define(['dispatcher'], function(dispatcher) {
 			recountTotal();
 			eventEmitter.dispatch();
 		}
+
 		if (e.type === 'cart-remove-all') {
 			if (!items.hasOwnProperty(e.id)) return;
 
@@ -59,17 +69,22 @@ define(['dispatcher'], function(dispatcher) {
 			recountTotal();
 			eventEmitter.dispatch();
 		}
-		if (e.type === 'cart-edit') {
-			if (!items.hasOwnProperty(e.id)) return;
 
-			if (e.hasOwnProperty('number')) items[e.id].number = parseFloat(e.number);
-			if (e.hasOwnProperty('price')) items[e.id].price = parseFloat(e.price);
-			items[e.id].totalPrice = items[e.id].price*items[e.id].number;
+		if (e.type === 'cart-set-number') {
+			if (items.hasOwnProperty(e.id)) {
+				items[e.id].number = parseFloat(e.number);
+				items[e.id].totalPrice = items[e.id].number*items[e.id].price;
 
-			if (e.hasOwnProperty('totalPrice')) items[e.id].totalPrice = parseFloat(e.totalPrice);
-
-			if (items[e.id].number <= 0) {
-				delete items[e.id];
+				if (items[e.id].number <= 0) {
+					delete items[e.id];
+				}
+			} else {
+				if (e.number <= 0) return;
+				items[e.id] = {
+					number: parseFloat(e.number),
+					price: 0,
+					totalPrice: 0
+				}
 			}
 
 			recountTotal();

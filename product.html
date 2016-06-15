@@ -55,7 +55,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="popup view-popup" data-id="production-popup">
+		<div class="popup view-popup" data-id="project-popup">
 			<div class="popup-outer">
 				<div class="close view-popup-close show320">
 					<div class="bars">
@@ -73,7 +73,7 @@
 								</div>
 							</div>
 							<div class="form-wrapper">
-								<div class="nm">Заказать продукцию</div>
+								<div class="nm">Заказать проект</div>
 								<form action="#" class="view-form">
 									<div class="ln">
 										<label class="input-wrapper">
@@ -82,9 +82,13 @@
 										</label>
 									</div>
 									<div class="ln">
-										<label class="input-wrapper">
-											<span class="input-placeholder">Телефон</span>
-											<input type="tel" class="text" name="name">
+										<label for="project-input" class="select-wrapper">
+											<span class="select-display" data-id="project-select">Кельн1</span>
+											<select class="select view-select" name="project" id="project-input" data-id="project-select">
+												<option value="Кельн1">Кельн</option>
+												<option value="Кельн2">Кельн</option>
+												<option value="Кельн3">Кельн</option>
+											</select>
 										</label>
 									</div>
 									<div class="ln">
@@ -110,6 +114,54 @@
 			</div>
 		</div>
 
+		<div class="popup view-popup slider-popup" data-id="slider-popup">
+			<div class="close view-popup-close corner">
+				<div class="bars">
+					<div class="b b1"></div>
+					<div class="b b2"></div>
+				</div>
+			</div>
+			<div class="slider-outer project-slider">
+				<div class="slider masked-slider" data-id="popup-slider" data-continuous="true">
+					<div class="slide">
+						<div class="img-wrap">
+							<div class="overlay"></div>
+							<div class="img" style="background-image:url(tmp/project.jpg)"></div>
+						</div>
+					</div>
+					<div class="slide">
+						<div class="img-wrap">
+							<div class="overlay"></div>
+							<div class="img" style="background-image:url(tmp/project.jpg)"></div>
+						</div>
+					</div>
+					<div class="slide">
+						<div class="img-wrap">
+							<div class="overlay"></div>
+							<div class="img" style="background-image:url(tmp/project.jpg)"></div>
+						</div>
+					</div>
+				</div>
+				<div class="slider-arrow prev view-slider-arrow" data-sliders="popup-slider" data-slide="prev">
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 625 952.4" xml:space="preserve">
+						<polygon points="476.2,952.4 625,803.6 297.6,476.2 625,148.8 476.2,0 0,476.2 "/>
+					</svg>
+				</div>
+				<div class="slider-arrow next view-slider-arrow" data-sliders="popup-slider" data-slide="next">
+					<svg version="1.1" id="_x3C_Layer_x3E_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 625 952.4" style="enable-background:new 0 0 625 952.4;" xml:space="preserve">
+						<polygon points="148.8,952.4 0,803.6 327.4,476.2 0,148.8 148.8,0 625,476.2 "/>
+					</svg>
+				</div>
+				<div class="slider-controls">
+					<div class="slider-controls-inner">
+						<div class="item view-slider-control" data-slide="0" data-sliders="popup-slider"></div>
+						<div class="item view-slider-control" data-slide="1" data-sliders="popup-slider"></div>
+						<div class="item view-slider-control" data-slide="2" data-sliders="popup-slider"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="mobile-menu-overlay"></div>
 		<div class="mobile-menu">
 			<div class="nav-inner">
@@ -121,7 +173,7 @@
 								<span class="a">Продукция</span>
 							</span>
 						</a>
-						<a class="item" href="projects.html">
+						<a class="item active" href="projects.html">
 							<span class="masked-link">
 								<span class="i">Проекты домов</span>
 								<span class="a">Проекты домов</span>
@@ -152,6 +204,7 @@
 							</span>
 						</a>
 					</nav>
+
 					<a href="tel:+74952015118" class="phone">+7 495 201-51-18</a>
 					<span class="callback view-popup-toggle" data-id="callback-popup">
 						<span class="ico-link call">
@@ -175,10 +228,13 @@
 				</div>
 			</div>
 			<nav>
-				<span class="item active">
-					<span>Продукция</span>
-				</span>
-				<a class="item" href="projects.html">
+				<a class="item" href="production.html">
+					<span class="masked-link">
+						<span class="i">Продукция</span>
+						<span class="a">Продукция</span>
+					</span>
+				</a>
+				<a class="item active" href="projects.html">
 					<span class="masked-link">
 						<span class="i">Проекты домов</span>
 						<span class="a">Проекты домов</span>
@@ -225,7 +281,7 @@
 						<span class="i">заказать звонок</span>
 						<span class="a">заказать звонок</span>
 					</span>
-				</span>
+				</a>
 			</span>
 		</header>
 		<main>
@@ -235,24 +291,116 @@
 				<div class="l l3"></div>
 				<div class="l l4"></div>
 			</div>
+			
+			<section class="project-slider slider-outer">
+				<div class="slider masked-slider" data-id="project-slider">
+					<div class="slide">
+						<div class="img-wrap">
+							<div class="overlay"></div>
+							<div class="img" style="background-image:url(tmp/project.jpg)"></div>
+						</div>
+					</div>
+					<div class="slide">
+						<div class="img-wrap">
+							<div class="overlay"></div>
+							<div class="img" style="background-image:url(tmp/project.jpg)"></div>
+						</div>
+					</div>
+					<div class="slide">
+						<div class="img-wrap">
+							<div class="overlay"></div>
+							<div class="img" style="background-image:url(tmp/project.jpg)"></div>
+						</div>
+					</div>
+				</div>
+				<div class="slider-arrow prev view-slider-arrow" data-sliders="project-slider" data-slide="prev">
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 625 952.4" xml:space="preserve">
+						<polygon points="476.2,952.4 625,803.6 297.6,476.2 625,148.8 476.2,0 0,476.2 "/>
+					</svg>
+				</div>
+				<div class="slider-arrow next view-slider-arrow" data-sliders="project-slider" data-slide="next">
+					<svg version="1.1" id="_x3C_Layer_x3E_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 625 952.4" style="enable-background:new 0 0 625 952.4;" xml:space="preserve">
+						<polygon points="148.8,952.4 0,803.6 327.4,476.2 0,148.8 148.8,0 625,476.2 "/>
+					</svg>
+				</div>
+				<div class="slider-controls">
+					<div class="slider-controls-inner">
+						<div class="item view-slider-control" data-slide="0" data-sliders="project-slider"></div>
+						<div class="item view-slider-control" data-slide="1" data-sliders="project-slider"></div>
+						<div class="item view-slider-control" data-slide="2" data-sliders="project-slider"></div>
+					</div>
+				</div>
+
+			</section>
 
 			<section class="path">
 				<div class="wrapper">
 					<div class="path-inner">
 						<a class="item" href="index.html">Главная</a>
-						<span class="item">Продукция</span>
+						<a class="item" href="production.html">Продукция</a>
+						<a class="item" href="production-inner.html">Стеновые блоки Ytong</a>
+						<span class="item">625x250x375 ровный</span>
 					</div>
 				</div>
 			</section>
-			
+
+			<article class="project narrow">
+				<div class="wrapper">
+					<h1>625x250x375 ровный</h1>
+					<blockquote>Пропорции фасадов и геометрия кровли, просто и удачно соединились с рациональной планировкой и наилучшим составом помещений.</blockquote>
+					<p>Особенно привлекательным выглядит основной фасад засчет наличия входной террасы с арочными элементами. На первом этаже расположена освещенная гостиная с кухней, прихожая и санузел. В мансардном этаже–две спальни, гостиная, детская и ванная комната. К основному объему дома пристроен гараж, в который можно попасть из холла, что создает дополнительное удобство.</p>
+					<p>Особенно привлекательным выглядит основной фасад засчет наличия входной террасы с арочными элементами.</p>
+				</div>
+			</article>
+
+			<section class="project-specs narrow">
+				<div class="wrapper">
+					<ul>
+						<li>
+							<span class="nm">стоимость:</span>
+							<span class="val">4 950 000 <span class="roub">у</span></span>
+						</li>
+						<li>
+							<span class="nm">Общая площадь:</span>
+							<span class="val">256 м<sup>2<sup></span>
+						</li>
+						<li>
+							<span class="nm">Жилая площадь:</span>
+							<span class="val">106 м<sup>2<sup></span>
+						</li>
+						<li>
+							<span class="nm">Материал внешних стен блоки YTONG:</span>
+							<span class="val">D 400, 375 mm</span>
+						</li>
+
+						<li>
+							<span class="nm">Материал внутренних перегородок блоки YTONG:</span>
+							<span class="val">D500 150</span>
+						</li>
+						<li>
+							<span class="nm">Наружная отделка:</span>
+							<span class="val">Тонкослойная штукатурка</span>
+						</li>
+						<li>
+							<span class="nm">Стоимость материалов:</span>
+							<span class="val">755 000 <span class="roub">у</span></span>
+						</li>
+					</ul>
+
+					<div class="product-add">
+						<div class="num-wrap">
+							<input class="cart-add-number" data-id="test-id-1" type="number" min="1" max="99" value="1">
+						</div>
+						<div class="btn cart-add" data-action="cart-add.json" data-id="test-id-1">
+							<span>положить В корзину</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
 			<section class="catalog">
 				<div class="wrapper triggerable scroll-trigger appear-up">
-					<h3>
-						<a href="production-inner.html" class="masked-link">
-							<span class="i">Стеновые блоки YTONG</span>
-							<span class="a">Стеновые блоки YTONG</span>
-						</a>
-					</h3>
+					<h1>Другие блоки</h1>
 					<div class="container cont-4">
 						<div class="item group-hover">
 							<div class="inner">
@@ -345,131 +493,6 @@
 							</div>
 						</div>
 						<div class="clear"></div>
-					</div>
-
-					<div class="drop-down-container" data-id="ctdd-1"
-						data-height-mobile="0"
-						data-height-tablet="0"
-						data-height-desktop="0">
-						<div class="drop-down-inner">
-							<div class="container cont-4">
-								<div class="item group-hover">
-									<div class="inner">
-										<a href="product.html" class="img group-hover-inner">
-											<img src="tmp/catalog.jpg" alt="">
-										</a>
-										<div class="text">
-											<div class="cat-size">625x250x500 </div>
-											<div class="cat-type">ровный</div>
-											<div class="cat-price">4 250 <span class="roub">у</span>/м<sup>3</sup></div>
-											<div class="cat-den">Плотность D 400</div>
-											<div class="cat-therm">Теплопередача 1,67</div>
-										</div>
-										<div class="add">
-											<div class="div added-text"><a href="cart.html">В корзину</a></div>
-											<div class="num-wrap">
-												<input type="text" value="1">
-											</div>
-											<div class="cart-add" data-action="cart-add.json">
-												<div class="ico"></div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item group-hover">
-									<div class="inner">
-										<a href="product.html" class="img group-hover-inner">
-											<img src="tmp/catalog.jpg" alt="">
-										</a>
-										<div class="text">
-											<div class="cat-size">625x250x500 </div>
-											<div class="cat-type">ровный</div>
-											<div class="cat-price">4 250 <span class="roub">у</span>/м<sup>3</sup></div>
-											<div class="cat-den">Плотность D 400</div>
-										</div>
-										<div class="add">
-											<div class="div added-text"><a href="cart.html">В корзину</a></div>
-											<div class="num-wrap">
-												<input type="text" value="1">
-											</div>
-											<div class="cart-add" data-action="cart-add.json">
-												<div class="ico"></div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="clear show320"></div>
-								<div class="item group-hover">
-									<div class="inner">
-										<a href="product.html" class="img group-hover-inner">
-											<img src="tmp/catalog.jpg" alt="">
-										</a>
-										<div class="text">
-											<div class="cat-size">625x250x500 </div>
-											<div class="cat-type">ровный</div>
-											<div class="cat-price">4 250 <span class="roub">у</span>/м<sup>3</sup></div>
-											<div class="cat-den">Плотность D 400</div>
-										</div>
-										<div class="add">
-											<div class="div added-text"><a href="cart.html">В корзину</a></div>
-											<div class="num-wrap">
-												<input type="text" value="1">
-											</div>
-											<div class="cart-add" data-action="cart-add.json">
-												<div class="ico"></div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item group-hover">
-									<div class="inner">
-										<a href="product.html" class="img group-hover-inner">
-											<img src="tmp/catalog.jpg" alt="">
-										</a>
-										<div class="text">
-											<div class="cat-size">625x250x500 </div>
-											<div class="cat-type">ровный</div>
-											<div class="cat-price">4 250 <span class="roub">у</span>/м<sup>3</sup></div>
-											<div class="cat-den">Плотность D 400</div>
-										</div>
-										<div class="add">
-											<div class="div added-text"><a href="cart.html">В корзину</a></div>
-											<div class="num-wrap">
-												<input type="text" value="1">
-											</div>
-											<div class="cart-add" data-action="cart-add.json">
-												<div class="ico"></div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="clear"></div>
-							</div>
-						</div>
-					</div>
-					<div class="ico-link-container">
-						<span class="ico-link a-d drop-down-control" data-id="ctdd-1">
-							<span class="arrow"></span>
-							<span class="tx">
-								<span class="i">показать все (18)</span>
-								<span class="a">показать все (18)</span>
-							</span>
-						</span>
-					</div>
-				</div>
-			</section>
-
-
-			<section class="catalog grey">
-				<div class="wrapper triggerable scroll-trigger appear-up">
-					<h3>
-						<a href="construction.html" class="masked-link">
-							<span class="i">Сборно-монолитные перекрытия Ytong</span>
-							<span class="a">Сборно-монолитные перекрытия Ytong</span>
-						</a>
-					</h3>
-					<div class="cat-general">Предлагаем клиентам купить и использовать сборно монолитные перекрытия Ytong.Такие перекрытия идеально подойдут для возведения зданий по комплексной системе YTONG. </div>
-					<div class="container cont-4 center">
 						<div class="item group-hover">
 							<div class="inner">
 								<a href="product.html" class="img group-hover-inner">
@@ -480,13 +503,14 @@
 									<div class="cat-type">ровный</div>
 									<div class="cat-price">4 250 <span class="roub">у</span>/м<sup>3</sup></div>
 									<div class="cat-den">Плотность D 400</div>
+									<div class="cat-therm">Теплопередача 1,67</div>
 								</div>
 								<div class="add">
 									<div class="div added-text"><a href="cart.html">В корзину</a></div>
 									<div class="num-wrap">
-										<input class="cart-add-number" data-id="test-id-5" type="number" min="1" max="99" value="1">
+										<input class="cart-add-number" data-id="test-id-1" type="number" min="1" max="99" value="1">
 									</div>
-									<div class="cart-add" data-action="cart-add.json" data-id="test-id-5">
+									<div class="cart-add" data-action="cart-add.json" data-id="test-id-1">
 										<div class="ico"></div>
 									</div>
 								</div>
@@ -506,76 +530,9 @@
 								<div class="add">
 									<div class="div added-text"><a href="cart.html">В корзину</a></div>
 									<div class="num-wrap">
-										<input class="cart-add-number" data-id="test-id-6" type="number" min="1" max="99" value="1">
+										<input class="cart-add-number" data-id="test-id-2" type="number" min="1" max="99" value="1">
 									</div>
-									<div class="cart-add" data-action="cart-add.json" data-id="test-id-6">
-										<div class="ico"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="clear"></div>
-					</div>
-<!-- 					<div class="ico-link-container">
-						<a href="construction.html" class="ico-link">
-							<span class="arrow"></span>
-							<span class="tx">
-								<span class="i">подробнее</span>
-								<span class="a">подробнее</span>
-							</span>
-						</a>
-					</div> -->
-				</div>
-			</section>
-
-			<section class="catalog">
-				<div class="wrapper triggerable scroll-trigger appear-up">
-					<h3>
-						<a href="production-inner.html" class="masked-link">
-							<span class="i">Сопутствующие товары</span>
-							<span class="a">Сопутствующие товары</span>
-						</a>
-					</h3>
-					<div class="container cont-4">
-						<div class="item group-hover">
-							<div class="inner">
-								<a href="product.html" class="img group-hover-inner">
-									<img src="tmp/catalog.jpg" alt="">
-								</a>
-								<div class="text">
-									<div class="cat-size">625x250x500 </div>
-									<div class="cat-type">ровный</div>
-									<div class="cat-price">4 250 <span class="roub">у</span>/м<sup>3</sup></div>
-									<div class="cat-den">Плотность D 400</div>
-								</div>
-								<div class="add">
-									<div class="div added-text"><a href="cart.html">В корзину</a></div>
-									<div class="num-wrap">
-										<input class="cart-add-number" data-id="test-id-7" type="number" min="1" max="99" value="1">
-									</div>
-									<div class="cart-add" data-action="cart-add.json" data-id="test-id-7">
-										<div class="ico"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item group-hover">
-							<div class="inner">
-								<a href="product.html" class="img group-hover-inner">
-									<img src="tmp/catalog.jpg" alt="">
-								</a>
-								<div class="text">
-									<div class="cat-size">625x250x500 </div>
-									<div class="cat-type">ровный</div>
-									<div class="cat-price">4 250 <span class="roub">у</span>/м<sup>3</sup></div>
-									<div class="cat-den">Плотность D 400</div>
-								</div>
-								<div class="add">
-									<div class="div added-text"><a href="cart.html">В корзину</a></div>
-									<div class="num-wrap">
-										<input class="cart-add-number" data-id="test-id-8" type="number" min="1" max="99" value="1">
-									</div>
-									<div class="cart-add" data-action="cart-add.json" data-id="test-id-8">
+									<div class="cart-add" data-action="cart-add.json" data-id="test-id-2">
 										<div class="ico"></div>
 									</div>
 								</div>
@@ -596,47 +553,9 @@
 								<div class="add">
 									<div class="div added-text"><a href="cart.html">В корзину</a></div>
 									<div class="num-wrap">
-										<input class="cart-add-number" data-id="test-id-9" type="number" min="1" max="99" value="1">
+										<input class="cart-add-number" data-id="test-id-3" type="number" min="1" max="99" value="1">
 									</div>
-									<div class="cart-add" data-action="cart-add.json" data-id="test-id-9">
-										<div class="ico"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="clear"></div>
-					</div>
-				</div>
-			</section>
-
-			<section class="catalog grey">
-				<div class="wrapper triggerable scroll-trigger appear-up">
-					<h3>
-						<a href="multipor.html" class="masked-link">
-							<span class="i">Утеплитель Multipor</span>
-							<span class="a">Утеплитель Multipor</span>
-						</a>
-					</h3>
-					<div class="cat-general">Предлагаем клиентам купить и использовать сборно монолитные перекрытия Ytong.Такие перекрытия идеально подойдут для возведения зданий по комплексной системе YTONG. </div>
-					<div class="container cont-4 center">
-						<div class="item group-hover">
-							<div class="inner">
-								<a href="product.html" class="img group-hover-inner">
-									<img src="tmp/catalog.jpg" alt="">
-								</a>
-								<div class="text">
-									<div class="cat-size">625x250x500 </div>
-									<div class="cat-type">ровный</div>
-									<div class="cat-price">4 250 <span class="roub">у</span>/м<sup>3</sup></div>
-									<div class="cat-den">Плотность D 400</div>
-									<div class="cat-therm">Теплопередача 1,67</div>
-								</div>
-								<div class="add">
-									<div class="div added-text"><a href="cart.html">В корзину</a></div>
-									<div class="num-wrap">
-										<input class="cart-add-number" data-id="test-id-10" type="number" min="1" max="99" value="1">
-									</div>
-									<div class="cart-add" data-action="cart-add.json" data-id="test-id-10">
+									<div class="cart-add" data-action="cart-add.json" data-id="test-id-3">
 										<div class="ico"></div>
 									</div>
 								</div>
@@ -652,14 +571,13 @@
 									<div class="cat-type">ровный</div>
 									<div class="cat-price">4 250 <span class="roub">у</span>/м<sup>3</sup></div>
 									<div class="cat-den">Плотность D 400</div>
-									<div class="cat-therm">Теплопередача 1,67</div>
 								</div>
 								<div class="add">
 									<div class="div added-text"><a href="cart.html">В корзину</a></div>
 									<div class="num-wrap">
-										<input class="cart-add-number" data-id="test-id-11" type="number" min="1" max="99" value="1">
+										<input class="cart-add-number" data-id="test-id-4" type="number" min="1" max="99" value="1">
 									</div>
-									<div class="cart-add" data-action="cart-add.json" data-id="test-id-11">
+									<div class="cart-add" data-action="cart-add.json" data-id="test-id-4">
 										<div class="ico"></div>
 									</div>
 								</div>
@@ -667,33 +585,8 @@
 						</div>
 						<div class="clear"></div>
 					</div>
-<!-- 					<div class="ico-link-container">
-						<a href="multipor.html" class="ico-link">
-							<span class="arrow"></span>
-							<span class="tx">
-								<span class="i">подробнее</span>
-								<span class="a">подробнее</span>
-							</span>
-						</a>
-					</div> -->
 				</div>
 			</section>
-
-			<section class="dark catalog-download">
-				<div class="img" style="background-image:url(tmp/dw-img.jpg)"></div>
-				<a href="#" class="dw-link">
-					<span class="ico-link-container">
-						<span class="ico-link download">
-							<span class="ico"></span>
-								<span class="tx">
-									<span class="i">скачать прайс</span>
-								</span>
-							</span>
-						</span>
-					</span>
-				</a>
-			</section>
-
 
 		</main>
 		<footer>

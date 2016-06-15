@@ -15,8 +15,8 @@ define(['dispatcher', 'selects/selects.store'], function(dispatcher, store) {
 			if (!storeData.items.hasOwnProperty(item.id)) return;
 			storeItem = storeData.items[item.id];
 
-			if (storeItem.value === item.value) return;
-			item.value = storeItem.value;
+			if (storeItem.text === item.value) return;
+			item.value = storeItem.text;
 			item.element.innerHTML = item.value;
 		}
 

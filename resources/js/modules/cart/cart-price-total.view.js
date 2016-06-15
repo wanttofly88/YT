@@ -114,7 +114,7 @@ define(['dispatcher', 'cart/cart.store'], function(dispatcher, store) {
 
 	var init = function() {
 		_handleMutate();
-		_handleChange();
+		// _handleChange();
 
 		store.eventEmitter.subscribe(_handleChange);
 

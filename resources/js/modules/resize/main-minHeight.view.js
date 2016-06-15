@@ -11,14 +11,22 @@ define(['dispatcher', 'resize/resize.store', 'resize/breakpoint.store'], functio
 		var storeData = store.getData();
 		var bpData = bpStore.getData();
 		var shift = 0;
+		var footerHeight;
+		var headerHeight;
 		if (contacts) shift = 0;
 
+		footerHeight = footer ? footer.clientHeight : 0;
+		headerHeight = header ? header.clientHeight : 0;
+
 		if (bpData.breakpoint.name === 'desktop') {
-			main.style.minHeight = (storeData.height - footer.clientHeight - shift) + 'px';
+			main.style.minHeight = (storeData.height - footerHeight - shift) + 'px';
 		} else {
-			main.style.minHeight = (storeData.height - footer.clientHeight - header.clientHeight - shift) + 'px';
+			main.style.minHeight = (storeData.height - footerHeight - headerHeight - shift) + 'px';
 		}
 
+		if (main.classList.contains('p404')) {
+			main.style.height = storeData.height + 'px';
+		}
 	}
 
 	var _handleMutate = function() {
@@ -26,7 +34,6 @@ define(['dispatcher', 'resize/resize.store', 'resize/breakpoint.store'], functio
 		footer = document.getElementsByTagName('footer')[0];
 		header = document.getElementsByTagName('header')[0];
 		contacts = document.getElementsByClassName('contacts-page')[0];
-		if (!main || !footer || !header) return;
 	}
 
 	var init = function() {

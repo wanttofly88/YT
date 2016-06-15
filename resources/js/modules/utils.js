@@ -116,7 +116,7 @@ define(function() {
 				}
 			}
 		},
-		send: function(url, callback, method, data, sync) {
+		send: function(url, callback, method, data, sync, type) {
 			var x = ajax.x();
 			x.open(method, url, sync);
 			x.onreadystatechange = function() {
@@ -124,10 +124,10 @@ define(function() {
 					callback(x.responseText)
 				}
 			}
-			// if (method == 'POST') {
-			// 	x.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-			// }
-			x.send(data)
+			if ((typeof(type) !== 'undefined') && (type === 'json')) {
+				x.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+			}
+			x.send(data);
 		},
 		get: function(url, data, callback, sync) {
 			var query = [];
@@ -136,13 +136,8 @@ define(function() {
 			}
 			ajax.send(url + '?' + query.join('&'), callback, 'GET', null, sync)
 		},
-		post: function(url, data, callback, sync) {
-			var query = [];
-			for (var key in data) {
-				query.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]));
-			}
-			query.push(encodeURIComponent('action') + '=' + encodeURIComponent('send'));
-			ajax.send(url, callback, 'POST', query.join('&'), sync)
+		post: function(url, data, callback, sync, type) {
+			ajax.send(url, callback, 'POST', data, sync, type)
 		}
 	}
 

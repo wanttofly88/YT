@@ -1,4 +1,4 @@
-define(['dispatcher', 'cart/cart.store'], function(dispatcher, store) {
+define(['dispatcher', 'cart/cart.store', 'utils'], function(dispatcher, store, utils) {
 
 	"use strict";
 
@@ -37,9 +37,11 @@ define(['dispatcher', 'cart/cart.store'], function(dispatcher, store) {
 
 	var _add = function(items, element) {
 		var id = element.getAttribute('data-id');
+		var action = element.getAttribute('data-action');
 
-		var handleClick = function(item) {
+		var handleClick = function() {
 			var num;
+			var data = {};
 
 			if (inputItems.hasOwnProperty(id)) {
 				num = inputItems[id].element.value;
@@ -48,8 +50,21 @@ define(['dispatcher', 'cart/cart.store'], function(dispatcher, store) {
 				num = 1;
 			}
 
+			data['id'] = id;
+			data['ajax'] = true;
+			data['number'] = num;
+
+			data = JSON.stringify(data);
+
+			utils.ajax.post(action, data, function(responce) {
+				dispatcher.dispatch({
+					type: 'cart-responded',
+					responce: responce
+				});
+			}, true, 'json');
+
 			dispatcher.dispatch({
-				type: 'cart-add',
+				type: 'cart-set-number',
 				id: id,
 				number: num,
 				price: 0
@@ -57,6 +72,11 @@ define(['dispatcher', 'cart/cart.store'], function(dispatcher, store) {
 		}
 
 		if (element.classList.contains('cart-add')) {
+			if (!action) {
+				console.warn('data-action is missing');
+				return;
+			}
+
 			element.addEventListener('click', handleClick);
 		}
 
@@ -68,6 +88,7 @@ define(['dispatcher', 'cart/cart.store'], function(dispatcher, store) {
 		items[id] = {
 			id: id,
 			element: element,
+			action: action,
 			active: false
 		}
 	}
@@ -135,7 +156,7 @@ define(['dispatcher', 'cart/cart.store'], function(dispatcher, store) {
 
 	var init = function() {
 		_handleMutate();
-		_handleChange();
+		// _handleChange();
 
 		store.eventEmitter.subscribe(_handleChange);
 

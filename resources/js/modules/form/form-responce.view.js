@@ -14,7 +14,6 @@ define(['dispatcher'], function(dispatcher) {
 
 		if (e.response.hasOwnProperty('response') && e.response.response !== '') {
 			if (!items.hasOwnProperty(e.id)) return;
-
 			inner = items[e.id].element.getElementsByClassName('responce-inner')[0];
 
 			if (e.response.status === 'success') {
@@ -22,6 +21,17 @@ define(['dispatcher'], function(dispatcher) {
 				items[e.id].element.classList.remove('status-error');
 				items[e.id].element.classList.add('status-success');
 				items[e.id].element.classList.add('active');
+
+				if (e.response.hasOwnProperty('cart') && e.response.cart === 'submitted') {
+					dispatcher.dispatch({
+						type: 'cart-responded',
+						responce: JSON.stringify(e.response)
+					});
+
+					setTimeout(function() {
+						location.href = '/';
+					}, 4000);
+				}
 			}
 			if (e.response.status === 'error') {
 				inner.innerHTML = e.response.response;
@@ -31,12 +41,14 @@ define(['dispatcher'], function(dispatcher) {
 			}
 		} else {
 			if (!items.hasOwnProperty(e.id)) return;
+			inner = items[e.id].element.getElementsByClassName('responce-inner')[0];
 			inner.innerHTML = '';
 			items[e.id].element.classList.remove('active');
 		}
 
 		if (e.type === 'ajax-form-reset') {
 			if (!items.hasOwnProperty(e.id)) return;
+			inner = items[e.id].element.getElementsByClassName('responce-inner')[0];
 			inner.innerHTML = '';
 			items[e.id].element.classList.remove('active');
 		}
